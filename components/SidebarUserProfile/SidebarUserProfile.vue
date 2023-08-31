@@ -17,7 +17,7 @@ export default {
         <span class="text-medium-emphasis">{{ online ? "Online" : "Offline" }}</span>
       </div>
 
-      <v-btn class="rounded-circle" variant="text" color="secondary" icon="mdi-dots-vertical"></v-btn>
+      <AppMenu />
     </div>
   </div>
 </template>

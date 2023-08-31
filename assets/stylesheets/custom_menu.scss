@@ -1,11 +1,17 @@
 @use "@/assets/stylesheets/theme.scss" as theme;
 
-.custom-menu {
+.custom_menu {
+    &.custom_menu-blurred {
+        .v-list {
+            background-color: rgb(theme.$primary-surface-color, 0.8) !important;
+            backdrop-filter: blur(10px);
+        }
+    }
+
     .v-list {
         box-shadow: 0px 0px 10px #00000026 !important;
 
         padding: 6px 5px;
-        margin-bottom: 15px;
 
         &,
         .v-list-item {

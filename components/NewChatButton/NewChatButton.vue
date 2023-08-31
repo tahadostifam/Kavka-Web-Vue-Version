@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <v-menu class="custom-menu" transition="scale-transition" location="bottom end" v-model="isOpen">
+  <v-menu class="custom_menu" transition="scale-transition" location="bottom end" v-model="isOpen">
     <template v-slot:activator="{ props }">
       <v-btn v-bind="props" class="new_chat_button rounded-circle" flat color="primary">
         <v-scale-transition>
@@ -20,7 +20,7 @@ export default {
       </v-btn>
     </template>
 
-    <v-list>
+    <v-list class="mb-3">
       <v-list-item>
         <v-list-item-title>
           <v-icon icon="mdi-bullhorn-outline"> </v-icon>
