@@ -3,9 +3,18 @@
     bottom: 18px;
     right: 18px;
 
-    --size: 70px;
-    width: var(--size) !important;
-    min-height: var(--size) !important;
+    max-width: unset;
+    max-height: unset;
+    min-height: unset;
+    min-width: unset;
 
-    font-size: 17px;
+    --size: 55px;
+    width: var(--size) !important;
+    height: var(--size) !important;
+
+    font-size: 20px;
+
+    .v-icon {
+        position: absolute;
+    }
 }
