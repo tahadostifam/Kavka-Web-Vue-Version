@@ -1,0 +1,21 @@
+$rounded-sm: 10px;
+$secondary-color: var(--v-theme-secondary);
+$primary-color: var(--v-theme-primary);
+$primary-surface-color: var(--v-theme-on-primary);
+
+html {
+    overflow-y: unset;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+body,
+.v-application {
+    overflow-x: hidden;
+}
+
+.rounded-sm {
+    border-radius: $rounded-sm !important;
+}
+
+@import url(./custom_menu.scss);

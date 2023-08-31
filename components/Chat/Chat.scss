@@ -1,0 +1,9 @@
+.chat_grid {
+    --sidebar-width: 400px;
+
+    display: grid;
+    grid-template-columns: var(--sidebar-width) calc(100% - var(--sidebar-width));
+    .col {
+        height: 100vh;
+    }
+}

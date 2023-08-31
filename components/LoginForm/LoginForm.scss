@@ -1,0 +1,11 @@
+.login_form {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 50px;
+    text-align: center;
+    width: 400px;
+    .logo {
+        height: 200px;
+    }
+}

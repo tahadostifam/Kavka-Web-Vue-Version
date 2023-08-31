@@ -1,0 +1,11 @@
+.new_chat_button {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+
+    --size: 70px;
+    width: var(--size) !important;
+    min-height: var(--size) !important;
+
+    font-size: 17px;
+}
