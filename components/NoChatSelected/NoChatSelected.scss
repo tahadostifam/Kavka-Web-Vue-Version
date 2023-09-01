@@ -1,0 +1,62 @@
+@use "@/assets/stylesheets/theme.scss" as theme;
+
+.no_chat_selected {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 50%);
+        z-index: 5;
+        padding: 2px 12px;
+        border-radius: 50px;
+        font-weight: 500;
+        background-color: rgb(theme.$secondary-color, 0.4);
+        color: rgb(theme.$primary-surface-color);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        background-position: top right;
+        background-size: 510px auto !important;
+        background-repeat: repeat;
+
+        background: url("~/assets/img/chat-bg-pattern-light.png");
+
+        opacity: 0.7;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("~/assets/img/chat-bg-br.png");
+    }
+}
+
+.v-theme--myCustomDarkTheme {
+    .no_chat_selected {
+        &::after {
+            background: url("~/assets/img/chat-bg-pattern-dark.png");
+        }
+
+        &::before {
+            background: rgb(var(--v-theme-background));
+            background-image: none;
+        }
+    }
+}

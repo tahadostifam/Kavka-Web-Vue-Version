@@ -1,12 +1,25 @@
 <script>
 import "./Chat.scss";
-export default {};
+export default {
+  data() {
+    return {
+      currentChat: {
+        selected: false,
+        chatID: null
+      }
+    };
+  }
+};
 </script>
 
 <template>
   <div class="chat_grid">
     <Sidebar />
 
-    <div class="col chat_section">Main</div>
+    <div class="col chat_section">
+      <NoChatSelected :currentChat="this.currentChat"/>
+
+      <ChatMessagingSection :currentChat="this.currentChat"/>
+    </div>
   </div>
 </template>

@@ -1,6 +1,7 @@
 <script>
 import "./Sidebar.scss";
-export default {};
+export default {
+};
 </script>
 
 <template>
@@ -9,6 +10,6 @@ export default {};
 
     <ChatRows />
 
-    <NewChatButton />
+    <NewChatButton/>
   </div>
 </template>

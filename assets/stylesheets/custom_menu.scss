@@ -3,13 +3,19 @@
 .custom_menu {
     &.custom_menu-blurred {
         .v-list {
-            background-color: rgb(theme.$primary-surface-color, 0.8) !important;
+            background-color: rgb(var(--v-theme-background), 0.8) !important;
             backdrop-filter: blur(10px);
         }
     }
 
     .v-list {
+        background-color: rgb(var(--v-theme-background)) !important;
+
         box-shadow: 0px 0px 10px #00000026 !important;
+
+        &.v-theme--myCustomDarkTheme {
+            box-shadow: 0px 0px 10px #000000b2 !important;
+        }
 
         padding: 6px 5px;
 
@@ -32,11 +38,16 @@
             }
 
             padding-left: 8px;
+
             min-height: 34px;
 
             &:hover {
                 background-color: rgb(theme.$secondary-color, 0.1);
             }
+        }
+
+        &.v-theme--myCustomDarkTheme .v-list-item:hover {
+            background-color: rgb(theme.$theme-on-bg-color, 0.1) !important;
         }
     }
 }
