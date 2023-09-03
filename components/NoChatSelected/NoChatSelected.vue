@@ -1,12 +1,24 @@
 <script>
+import { useCurrentChatStore } from "~/stores/currentChat";
 import "./NoChatSelected.scss";
 export default {
-    props: "currentChat"
+  data() {
+    return {
+      currentChatStore: undefined,
+      isSelected: undefined,
+    };
+  },
+  mounted() {
+    const currentChatStore = useCurrentChatStore();
+    this.currentChatStore = currentChatStore;
+
+    this.isSelected = currentChatStore.isSelected;
+  },
 };
 </script>
 
 <template>
-    <div class="no_chat_selected">
-        <span v-if="currentChat && !currentChat.selected">No chat selected!</span>
-    </div>
+  <div class="no_chat_selected" v-if="currentChatStore">
+    <span v-if="!isSelected">No chat selected!</span>
+  </div>
 </template>

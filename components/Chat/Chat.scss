@@ -1,8 +1,30 @@
+@use "@/assets/stylesheets/theme.scss" as theme;
+
 .chat_grid {
     --sidebar-width: 420px;
 
+    @media screen and (max-width: theme.$bk-desktop-1) {
+        &{
+            --sidebar-width: 350px;
+        }
+    }
+
+    @media screen and (max-width: theme.$bk-desktop-2) {
+        &{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            --sidebar-width: 100%;
+        }
+    }
+
     display: grid;
     grid-template-columns: var(--sidebar-width) calc(100% - var(--sidebar-width));
+
     .col {
         height: 100vh;
     }

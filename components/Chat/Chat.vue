@@ -1,15 +1,6 @@
 <script>
 import "./Chat.scss";
-export default {
-  data() {
-    return {
-      currentChat: {
-        selected: false,
-        chatID: null
-      }
-    };
-  }
-};
+export default {};
 </script>
 
 <template>
@@ -17,9 +8,9 @@ export default {
     <Sidebar />
 
     <div class="col chat_section">
-      <NoChatSelected :currentChat="this.currentChat"/>
+      <NoChatSelected />
 
-      <ChatMessagingSection :currentChat="this.currentChat"/>
+      <ChatMessagingSection />
     </div>
   </div>
 </template>

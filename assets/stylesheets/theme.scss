@@ -4,6 +4,10 @@ $primary-color: var(--v-theme-primary);
 $primary-surface-color: var(--v-theme-on-primary);
 $theme-on-bg-color: var(--v-theme-on-background);
 
+$bk-desktop-1: 1250px;
+$bk-desktop-2: 1050px;
+$bk-desktop-3: 600px;
+
 html {
     overflow-y: unset;
     user-select: none;

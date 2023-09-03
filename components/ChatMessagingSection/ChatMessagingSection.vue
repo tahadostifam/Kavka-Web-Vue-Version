@@ -2,15 +2,18 @@
 import "./ChatMessagingSection.scss";
 import SimpleBar from "simplebar-vue";
 import "simplebar-vue/dist/simplebar.min.css";
+import { useCurrentChatStore } from "~/stores/currentChat";
 
 export default {
-  props: "currentChat",
   components: {
     SimpleBar,
   },
   data() {
     return {
       isChatOptionsOpen: false,
+      // Current Chat
+      currentChatStore: undefined,
+      isSelected: undefined,
     };
   },
   methods: {
@@ -18,12 +21,22 @@ export default {
       alert("Not implement yet");
     },
   },
-  mounted() {},
+  mounted() {
+    const currentChatStore = useCurrentChatStore();
+    this.currentChatStore = currentChatStore;
+
+    this.isSelected = currentChatStore.isSelected;
+  },
 };
 </script>
 
 <template>
-  <div class="chat_messaging_section">
+  <!-- :class="currentChat.selected ? 'isOpen' : undefined" -->
+  <div
+    class="chat_messaging_section"
+    v-if="currentChatStore"
+    :class="isSelected ? 'chat_messaging_section_show' : undefined"
+  >
     <v-card
       height="var(--chat-header-height)"
       class="chat_header d-flex align-center justify rounded-0 px-4"
@@ -83,7 +96,7 @@ export default {
     <div class="chat_messaging_section_container">
       <SimpleBar class="bubbles_container">
         <div class="bubbles">
-          <MessageBubble v-for="item in 50" />
+          <MessageBubble v-for="item in 3" />
         </div>
       </SimpleBar>
 

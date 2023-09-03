@@ -12,7 +12,8 @@
             color: rgb(theme.$primary-surface-color, 1) !important;
         }
         .chat_row_user_last_message {
-            color: rgb(theme.$primary-surface-color, 0.95) !important;
+            opacity: 1;
+            color: rgb(theme.$primary-surface-color, 1) !important;
         }
     }
     &:hover {
@@ -30,7 +31,7 @@
     }
     .chat_row_user_last_message {
         font-size: 14px;
-        color: rgb(theme.$primary-surface-color);
+        opacity: 0.9;
     }
     .chat_row_avatar {
         --size: 55px;

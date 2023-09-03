@@ -1,3 +1,5 @@
+@use "@/assets/stylesheets/theme.scss" as theme;
+
 .chat_messaging_section {
   --chat-header-height: 65px;
   --chat-bubbles-width: 700px;
@@ -10,6 +12,13 @@
   bottom: 0;
   height: 100%;
   width: 100%;
+
+  // Toggle Show/Hide
+  display: none;
+  &.chat_messaging_section_show{
+    display: block;
+  }
+  // End Toggle Show/Hide
 
   .chat_messaging_section_container{
     display: flex !important;
@@ -48,5 +57,18 @@
     display: grid;
     grid-template-columns: calc(100% - 75px) auto;
     justify-content: space-between;
+  }
+}
+
+
+@media screen and (max-width: theme.$bk-desktop-1) {
+  .chat_messaging_section {
+    --chat-bubbles-width: 600px;
+  }
+}
+
+@media screen and (max-width: theme.$bk-desktop-2) {
+  .chat_messaging_section {
+    --chat-bubbles-width: 95%;
   }
 }
