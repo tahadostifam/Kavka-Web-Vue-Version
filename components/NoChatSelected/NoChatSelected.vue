@@ -1,5 +1,5 @@
 <script>
-import { useCurrentChatStore } from "~/stores/currentChat";
+import useCurrentChatStore from "~/stores/current_chat";
 import "./NoChatSelected.scss";
 export default {
   data() {

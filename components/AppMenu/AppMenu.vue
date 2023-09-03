@@ -1,5 +1,5 @@
 <script>
-import { useThemesStore } from "~/stores/theme";
+import useThemesStore from "~/stores/theme";
 import "./AppMenu.scss";
 
 export default {
@@ -16,24 +16,34 @@ export default {
       themesStore.setDarkMode(this.darkModeChecked);
 
       console.log("Dark mode set to", this.darkModeChecked);
-    }
+    },
   },
 };
 </script>
 
 <template>
-  <v-menu :close-on-content-click="false" class="custom_menu custom_menu-blurred app_menu" transition="scale-transition" location="top end" v-model="isOpen">
+  <v-menu
+    :close-on-content-click="false"
+    class="custom_menu custom_menu-blurred app_menu"
+    transition="scale-transition"
+    location="top end"
+    v-model="isOpen"
+  >
     <template v-slot:activator="{ props }">
       <v-btn v-bind="props" class="rounded-circle mr-4" variant="text" icon="mdi-menu"></v-btn>
     </template>
 
     <v-list class="mt-3 mr-4">
       <v-list-item>
-        <v-list-item-title> <v-icon icon="mdi-bookmark-outline"> </v-icon> Saved Messages</v-list-item-title>
+        <v-list-item-title>
+          <v-icon icon="mdi-bookmark-outline"> </v-icon> Saved Messages</v-list-item-title
+        >
       </v-list-item>
 
       <v-list-item>
-        <v-list-item-title><v-icon icon="mdi-account-outline"> </v-icon> Contacts</v-list-item-title>
+        <v-list-item-title
+          ><v-icon icon="mdi-account-outline"> </v-icon> Contacts</v-list-item-title
+        >
       </v-list-item>
 
       <v-list-item>
@@ -44,7 +54,14 @@ export default {
         <v-list-item-title class="app_menu_night_mode_toggler">
           <div><v-icon icon="mdi-weather-night"> </v-icon> Night mode</div>
           <div>
-            <v-switch :ripple="false" v-model="darkModeChecked" @change="changeDarkModeModel" class="custom_switch mr-4" color="primary" hide-details></v-switch>
+            <v-switch
+              :ripple="false"
+              v-model="darkModeChecked"
+              @change="changeDarkModeModel"
+              class="custom_switch mr-4"
+              color="primary"
+              hide-details
+            ></v-switch>
           </div>
         </v-list-item-title>
       </v-list-item>
@@ -58,7 +75,9 @@ export default {
       </v-list-item>
 
       <v-list-item>
-        <v-list-item-title><v-icon icon="mdi-plus-circle-outline"> </v-icon> Install App</v-list-item-title>
+        <v-list-item-title
+          ><v-icon icon="mdi-plus-circle-outline"> </v-icon> Install App</v-list-item-title
+        >
       </v-list-item>
 
       <span class="app_menu_version text-medium-emphasis">Kavka Web 0.1</span>

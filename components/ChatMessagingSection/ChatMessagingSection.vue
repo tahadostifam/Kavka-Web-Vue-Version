@@ -1,8 +1,8 @@
 <script>
-import "./ChatMessagingSection.scss";
 import SimpleBar from "simplebar-vue";
 import "simplebar-vue/dist/simplebar.min.css";
-import { useCurrentChatStore } from "~/stores/currentChat";
+import useCurrentChatStore from "~/stores/current_chat";
+import "./ChatMessagingSection.scss";
 
 export default {
   components: {

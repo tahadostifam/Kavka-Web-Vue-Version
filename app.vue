@@ -1,16 +1,18 @@
 <script setup>
 import "@/assets/stylesheets/theme.scss";
-import { useTheme } from 'vuetify';
-import { useThemesStore } from "./stores/theme";
 import { storeToRefs } from "pinia";
+import { watch } from "vue";
+import { useTheme } from "vuetify";
+import useThemesStore from "./stores/theme";
 
-const theme = useTheme();
+const vuetifyTheme = useTheme();
+
 const themesStore = useThemesStore();
-const { darkMode } = storeToRefs(themesStore);
+const { _darkMode } = storeToRefs(themesStore);
 
-watch(darkMode, (value) => {
+watch(_darkMode, (value) => {
   console.log("Vuetify darkMode: " + value);
-  theme.global.name.value = (value == true) ? 'myCustomDarkTheme' : 'myCustomLightTheme';
+  vuetifyTheme.global.name.value = value == true ? "myCustomDarkTheme" : "myCustomLightTheme";
 });
 </script>
 
