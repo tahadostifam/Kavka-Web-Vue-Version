@@ -1,53 +1,61 @@
 @use "@/assets/stylesheets/theme.scss" as theme;
 
 .custom_menu {
-    &.custom_menu-blurred {
-        .v-list {
-            background-color: rgb(var(--v-theme-background), 0.8) !important;
-            backdrop-filter: blur(10px);
-        }
-    }
-
+  &.custom_menu-blurred {
     .v-list {
-        background-color: rgb(var(--v-theme-background)) !important;
+      backdrop-filter: blur(10px);
+      background-color: rgb(var(--v-theme-background), 0.8) !important;
 
-        box-shadow: 0px 0px 10px #00000026 !important;
-
-        &.v-theme--myCustomDarkTheme {
-            box-shadow: 0px 0px 10px #000000b2 !important;
-        }
-
-        padding: 6px 5px;
-
-        &,
-        .v-list-item {
-            border-radius: theme.$rounded-sm !important;
-        }
-
-        .v-list-item {
-            cursor: pointer;
-
-            .v-list-item-title {
-                color: rgb(theme.$theme-on-bg-color) !important;
-                font-size: 14px;
-                font-weight: 500 !important;
-            }
-
-            .v-icon {
-                margin-right: 8px;
-            }
-
-            padding-left: 8px;
-
-            min-height: 34px;
-
-            &:hover {
-                background-color: rgb(theme.$secondary-color, 0.1);
-            }
-        }
-
-        &.v-theme--myCustomDarkTheme .v-list-item:hover {
-            background-color: rgb(theme.$theme-on-bg-color, 0.1) !important;
-        }
+      &.v-theme--myCustomDarkTheme {
+        background-color: rgb(theme.$secondary-color, 0.8) !important;
+      }
     }
+  }
+
+  .v-list {
+    background-color: rgb(var(--v-theme-background)) !important;
+
+    &.v-theme--myCustomDarkTheme {
+      background-color: rgb(theme.$secondary-color) !important;
+    }
+
+    box-shadow: 0px 0px 10px #00000026 !important;
+
+    &.v-theme--myCustomDarkTheme {
+      box-shadow: 0px 0px 10px #000000b2 !important;
+    }
+
+    padding: 6px 5px;
+
+    &,
+    .v-list-item {
+      border-radius: theme.$rounded-sm !important;
+    }
+
+    .v-list-item {
+      cursor: pointer;
+
+      .v-list-item-title {
+        color: rgb(theme.$theme-on-bg-color) !important;
+        font-size: 14px;
+        font-weight: 500 !important;
+      }
+
+      .v-icon {
+        margin-right: 8px;
+      }
+
+      padding-left: 8px;
+
+      min-height: 34px;
+
+      &:hover {
+        background-color: rgb(theme.$secondary-color, 0.1);
+      }
+    }
+
+    &.v-theme--myCustomDarkTheme .v-list-item:hover {
+      background-color: rgb(theme.$theme-on-bg-color, 0.1) !important;
+    }
+  }
 }

@@ -31,21 +31,8 @@ export default {
 </script>
 
 <template>
-  <div class="chat_rows">
-    <h1 class="chat_rows_header">Messages</h1>
-
-    <v-text-field
-        class="mt-3"
-        density="compact"
-        variant="outlined"
-        color="primary"
-        label="Search"
-        prepend-inner-icon="mdi-magnify"
-        single-line hide-details
-        @click:append-inner="onClick">
-    </v-text-field>
-
-    <div class="chat_rows_list mt-4">
+  <div class="chat_rows mt-3">
+    <div class="chat_rows_list">
       <ChatRow
       v-for="(item, index) in chatsList"
         :key="index"

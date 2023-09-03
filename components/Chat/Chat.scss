@@ -1,5 +1,5 @@
 .chat_grid {
-    --sidebar-width: 400px;
+    --sidebar-width: 420px;
 
     display: grid;
     grid-template-columns: var(--sidebar-width) calc(100% - var(--sidebar-width));

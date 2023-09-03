@@ -24,7 +24,7 @@ export default {
 <template>
   <v-menu :close-on-content-click="false" class="custom_menu custom_menu-blurred app_menu" transition="scale-transition" location="top end" v-model="isOpen">
     <template v-slot:activator="{ props }">
-      <v-btn v-bind="props" class="rounded-circle mr-4" variant="text" icon="mdi-dots-vertical"></v-btn>
+      <v-btn v-bind="props" class="rounded-circle mr-4" variant="text" icon="mdi-menu"></v-btn>
     </template>
 
     <v-list class="mt-3 mr-4">
@@ -44,7 +44,7 @@ export default {
         <v-list-item-title class="app_menu_night_mode_toggler">
           <div><v-icon icon="mdi-weather-night"> </v-icon> Night mode</div>
           <div>
-            <v-switch v-model="darkModeChecked" @change="changeDarkModeModel" class="custom_switch mr-4" color="primary" hide-details></v-switch>
+            <v-switch :ripple="false" v-model="darkModeChecked" @change="changeDarkModeModel" class="custom_switch mr-4" color="primary" hide-details></v-switch>
           </div>
         </v-list-item-title>
       </v-list-item>

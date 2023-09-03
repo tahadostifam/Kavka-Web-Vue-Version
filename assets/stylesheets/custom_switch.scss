@@ -1,3 +1,32 @@
+@use "@/assets/stylesheets/theme.scss" as theme;
+
 .custom_switch {
-    color: red;
+    .v-selection-control__wrapper{
+        height: 25px !important;
+    }
+
+    .v-selection-control {
+        min-height: unset !important;
+    }
+
+    .v-selection-control__input::before {
+        display: none;
+    }
+
+    .v-switch__track{
+        height: 15px;
+        background-color: rgb(var(--v-theme-surface-variant), 0.6);
+        opacity: 1;
+    }
+
+    .v-switch__thumb{
+        border: 2px solid rgb(var(--v-theme-surface-variant), 0.6);
+    }
+
+    .v-selection-control--dirty {
+        .v-switch__thumb{
+            background-color: #fff !important;
+            border: 2px solid rgb(theme.$primary-color) !important;
+        }
+    }
 }

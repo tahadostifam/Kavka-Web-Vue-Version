@@ -3,13 +3,21 @@
 .chat_sidebar {
     position: relative;
 
-    padding: 18px;
+    padding: 8px 15px;
 
     border-right: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
 }
 
 .v-theme--myCustomDarkTheme {
     .chat_sidebar {
-        background-color: theme.$secondary-color !important;
+        background-color: rgb(theme.$secondary-color) !important;
     }
+}
+
+.chat_sidebar_folders{
+    position: relative;
+    width: calc(100% + 30px);
+    left: -15px;
+    right: -15px;
+    border-bottom: 1px solid rgb(theme.$theme-on-bg-color, 0.2);
 }
