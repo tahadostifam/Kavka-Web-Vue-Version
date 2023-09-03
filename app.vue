@@ -12,7 +12,6 @@ watch(darkMode, (value) => {
   console.log("Vuetify darkMode: " + value);
   theme.global.name.value = (value == true) ? 'myCustomDarkTheme' : 'myCustomLightTheme';
 });
-
 </script>
 
 <template>
