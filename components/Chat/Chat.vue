@@ -1,6 +1,11 @@
 <script>
 import "./Chat.scss";
-export default {};
+export default {
+  data() {
+    return {
+    }
+  }
+};
 </script>
 
 <template>

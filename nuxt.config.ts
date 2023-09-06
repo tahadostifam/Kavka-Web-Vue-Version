@@ -21,6 +21,9 @@ const myCustomDarkTheme: ThemeDefinition = {
 };
 
 export default defineNuxtConfig({
+  appConfig: {
+
+  },
   devtools: {
     enabled: true,
 

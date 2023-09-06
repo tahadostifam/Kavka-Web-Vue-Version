@@ -1,19 +1,26 @@
-<script>
+<script lang="ts">
+import { formattedPhone, unformattedPhone } from "@/utils/phone_formatter";
 import "./LoginForm.scss";
 
 export default {
+  props: ["handleLogin", "submitLoading"],
   data() {
     return {
       phoneNumber: "",
+      keepMeSignedIn: true
     };
   },
   methods: {
-    enforcePhoneFormat() {
-      let x = this.phoneNumber.replace(/\D/g, "").match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-
-      this.phoneNumber = !x[2] ? x[1] : "(" + x[1] + ") " + x[2] + (x[3] ? "-" + x[3] : "");
+    formattedPhone,
+    unformattedPhone,
+    handlePhoneInput() {
+      this.phoneNumber = this.formattedPhone(this.phoneNumber)
     },
   },
+  mounted() {
+    // FIXME - development
+    this.phoneNumber = this.formattedPhone("9368392346")
+  }
 };
 </script>
 
@@ -22,12 +29,12 @@ export default {
     <img src="~/assets/img/logo.png" class="logo mb-5" />
     <h1>Sign in to Kavka</h1>
     <p class="text-medium-emphasis mb-8">Please enter your phone number.</p>
-    <v-form>
-      <v-text-field placeholder="(xxx) xxx-xxxx" @input="enforcePhoneFormat()" v-model="phoneNumber" maxlength="16" color="primary" label="Phone Number" variant="outlined"></v-text-field>
+    <div>
+      <v-text-field placeholder="(987) 654-3210" @input="handlePhoneInput()" v-model="phoneNumber" maxlength="16" color="primary" label="Phone Number" variant="outlined"></v-text-field>
 
-      <v-checkbox label="Keep me signed in" color="primary"></v-checkbox>
+      <v-checkbox v-model="keepMeSignedIn" label="Keep me signed in" color="primary"></v-checkbox>
 
-      <v-btn class="rounded-sm" size="x-large" type="submit" color="primary" flat block>Next</v-btn>
-    </v-form>
+      <v-btn :loading="submitLoading" @click="handleLogin(unformattedPhone(phoneNumber), keepMeSignedIn)" class="rounded-sm" size="x-large" type="submit" color="primary" flat block>Next</v-btn>
+    </div>
   </div>
 </template>

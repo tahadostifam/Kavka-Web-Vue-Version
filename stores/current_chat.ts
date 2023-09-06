@@ -11,21 +11,21 @@ export type CurrentChat = {
 export default defineStore({
     id: 'currentChat',
     state: () => ({
-        _currentChat: null as CurrentChat | null
+        _currentChat: undefined as CurrentChat | undefined
     }),
     actions: {
         setCurrentChat(currentChat: CurrentChat) {
             this._currentChat = currentChat;
         },
         removeCurrentChat() {
-            this._currentChat = null;
+            this._currentChat = undefined;
         }
     },
     getters: {
         isSelected(): boolean {
-            return this._currentChat != null;
+            return this._currentChat != undefined;
         },
-        currentChat(): CurrentChat | null {
+        currentChat(): CurrentChat | undefined {
             return this._currentChat;
         }
     }

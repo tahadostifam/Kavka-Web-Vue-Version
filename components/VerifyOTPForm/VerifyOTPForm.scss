@@ -1,0 +1,22 @@
+.verify_otp_form{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    max-width: max-content;
+    margin-top: 200px;
+    .verify_otp_form_header {
+        font-size: 35px;
+        color: #000;
+    }
+    .verify_otp_form_phone {
+        margin-top: 10px;
+        font-size: 25px;
+        .v-icon{
+            font-size: 25px;
+            margin-bottom: 6px;
+            color: #707579;
+            cursor: pointer;
+        }
+    }
+}
