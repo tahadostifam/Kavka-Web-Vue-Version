@@ -50,13 +50,6 @@
 
 .v-theme--myCustomDarkTheme {
     .no_chat_selected {
-        &::after {
-            background: url("~/assets/img/chat-bg-pattern-dark.png");
-        }
-
-        &::before {
-            background: rgb(var(--v-theme-background));
-            background-image: none;
-        }
+        background-color: theme.$background-color;
     }
 }

@@ -1,12 +1,31 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("./fonts/Vazirmatn/Vazirmatn.ttf");
+}
+
+$body-font-family: 'Poppins', 'Vazirmatn';
+
+
+$background-color: #050505;
 $rounded-sm: 10px;
 $secondary-color: var(--v-theme-secondary);
 $primary-color: var(--v-theme-primary);
 $primary-surface-color: var(--v-theme-on-primary);
 $theme-on-bg-color: var(--v-theme-on-background);
+$border-color-light: #a4a59c28;
 
 $bk-desktop-1: 1250px;
 $bk-desktop-2: 1050px;
 $bk-desktop-3: 600px;
+
+.v-application, html, body {
+    font-family: $body-font-family, sans-serif !important;
+}
 
 html {
     overflow-y: unset;

@@ -13,7 +13,7 @@ export default {
     <Sidebar />
 
     <div class="col chat_section">
-      <NoChatSelected />
+      <!-- <NoChatSelected /> -->
 
       <ChatMessagingSection />
     </div>

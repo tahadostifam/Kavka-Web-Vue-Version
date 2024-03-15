@@ -1,5 +1,11 @@
 @use "@/assets/stylesheets/theme.scss" as theme;
 
+.chat_header {
+  background-color: theme.$background-color;
+  border-bottom: 1px solid theme.$border-color-light;
+  padding: 8px 0px;
+}
+
 .chat_messaging_section {
   --chat-header-height: 65px;
   --chat-bubbles-width: 700px;
@@ -15,12 +21,12 @@
 
   // Toggle Show/Hide
   display: none;
-  &.chat_messaging_section_show{
+  &.chat_messaging_section_show {
     display: block;
   }
   // End Toggle Show/Hide
 
-  .chat_messaging_section_container{
+  .chat_messaging_section_container {
     display: flex !important;
     flex-direction: column;
     height: calc(100% - var(--chat-input-height));
@@ -31,15 +37,16 @@
 
     overflow-y: auto;
 
-    &, .bubbles {
-        height: 100%;
+    &,
+    .bubbles {
+      height: 100%;
     }
 
     .bubbles {
-        position: relative;
-        left: 50%;
-        transform: translate(-50%);
-        width: var(--chat-bubbles-width);
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+      width: var(--chat-bubbles-width);
     }
   }
 
@@ -59,7 +66,6 @@
     justify-content: space-between;
   }
 }
-
 
 @media screen and (max-width: theme.$bk-desktop-1) {
   .chat_messaging_section {

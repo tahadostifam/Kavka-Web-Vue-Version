@@ -5,12 +5,22 @@
 
     padding: 8px 15px;
 
-    border-right: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+    border-right: 1px solid theme.$border-color-light;
+
+    .chat_sidebar-user_avatar{
+        width: 100%;
+        .chat_sidebar-user_avatar-username{
+            font-size: 20px;
+        }
+        .chat_sidebar-user_avatar-state{
+            font-size: 15px;
+        }
+    }
 }
 
 .v-theme--myCustomDarkTheme {
     .chat_sidebar {
-        background-color: rgb(theme.$secondary-color) !important;
+        background-color: theme.$background-color !important;
     }
 }
 

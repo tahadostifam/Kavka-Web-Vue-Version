@@ -10,45 +10,31 @@ export default {
 </script>
 
 <template>
-  <div class="col chat_sidebar">
+  <div class="col chat_sidebar py-6 px-5">
     <div class="d-flex align-center flex-row justify-space-between">
-      <AppMenu />
+      <div class="chat_sidebar-user_avatar">
+        <div class="d-flex flex-row justify-space-between">
+          <div class="d-flex">
+            <v-avatar class="mr-3 rounded-sm" color="primary" size="70">
+              <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
+            </v-avatar>
+            <div>
+              <h1 class="text-high-emphasis chat_sidebar-user_avatar-username">John Doe</h1>
+              <span class="text-disabled chat_sidebar-user_avatar-state">Online</span>
+            </div>
+          </div>
 
-      <v-text-field
-        rounded
-        density="compact"
-        variant="outlined"
-        color="primary"
-        label="Search"
-        prepend-inner-icon="mdi-magnify"
-        single-line
-        hide-details
-        @click:append-inner="onClick"
-      >
-      </v-text-field>
+          <div class="d-flex align-center">
+            <AppMenu />
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="chat_sidebar_folders mt-2">
-      <v-tabs show-arrow fixed-tabs v-model="selectedFolder" color="primary">
-        <v-tab value="one">All</v-tab>
-        <v-tab value="two">Personal</v-tab>
-        <v-tab value="three">Music</v-tab>
-        <v-tab value="four">Programming</v-tab>
-      </v-tabs>
+    <div class="mt-8">
+      <v-text-field prepend-inner-icon="mdi-magnify" placeholder="Search" variant="solo"></v-text-field>
+      <h2>Messages</h2>
+      <ChatRows />
     </div>
-
-    <!-- <v-card-text> -->
-      <!-- <v-window v-model="tab">
-        <v-window-item value="one"> One </v-window-item>
-
-        <v-window-item value="two"> Two </v-window-item>
-
-        <v-window-item value="three"> Three </v-window-item>
-      </v-window> -->
-    <!-- </v-card-text> -->
-
-    <ChatRows />
-
-    <NewChatButton />
   </div>
 </template>

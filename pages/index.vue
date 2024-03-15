@@ -9,7 +9,7 @@ export default {
   },
   methods: {
     update() {
-      this.authStore.authenticate().catch(() => this.$router.push("/login"));
+      // this.authStore.authenticate().catch(() => this.$router.push("/login"));
     }
   },
   mounted() {
@@ -20,6 +20,6 @@ export default {
 </script>
 
 <template>
-  <Chat v-if="authStore.user"/>
-  <SplitLoader v-else/>
+  <Chat />
+  <!-- <SplitLoader v-else/> -->
 </template>

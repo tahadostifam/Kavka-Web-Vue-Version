@@ -31,13 +31,12 @@ export default {
 </script>
 
 <template>
-  <!-- :class="currentChat.selected ? 'isOpen' : undefined" -->
+  <!-- v-if="currentChatStore"
+  :class="isSelected ? 'chat_messaging_section_show' : undefined" -->
   <div
-    class="chat_messaging_section"
-    v-if="currentChatStore"
-    :class="isSelected ? 'chat_messaging_section_show' : undefined"
+    class="chat_messaging_section chat_messaging_section_show"
   >
-    <v-card
+    <div
       height="var(--chat-header-height)"
       class="chat_header d-flex align-center justify rounded-0 px-4"
     >
@@ -91,12 +90,12 @@ export default {
           </v-menu>
         </div>
       </div>
-    </v-card>
+    </div>
 
     <div class="chat_messaging_section_container">
       <SimpleBar class="bubbles_container">
         <div class="bubbles">
-          <MessageBubble v-for="item in 3" />
+          <MessageBubble v-for="item in 10" />
         </div>
       </SimpleBar>
 
@@ -114,6 +113,7 @@ export default {
           @click:append-inner="openEmojiBox"
         >
         </v-text-field>
+
         <v-btn flat color="primary" class="rounded-circle mr-4" icon="mdi-microphone"></v-btn>
       </div>
     </div>
