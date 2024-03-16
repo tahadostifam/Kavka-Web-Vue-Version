@@ -94,6 +94,10 @@ export default {
         <div class="bubbles">
           <MessageBubble :caption="'Hello World'" :isRTL="false" />
           <MessageBubble :specialContentUrl="'http://localhost:3000/wallpaper1.jpg'" :caption="'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available. '" :isRTL="false" />
+
+          <MessageBubble :specialContentUrl="'http://localhost:3000/wallpaper2.jpg'" :caption="''" :isRTL="true" />
+          <MessageBubble :caption="'سلام!'" :isRTL="true" />
+          <MessageBubble :caption="'خوبی؟'" :isRTL="true" />
         </div>
       </SimpleBar>
 

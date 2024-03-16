@@ -1,46 +1,68 @@
 @use "@/assets/stylesheets/theme.scss" as theme;
 
-.message_bubble {
+.message_bubble_row {
+  display: flex;
+  width: 100%;
   margin-bottom: 20px;
-  .message_bubble_user_avatar {
-    border-radius: 12px;
-  }
-  .message_bubble_image {
-    max-width: 100%;
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
-    &,
-    img {
-      border-radius: theme.$rounded-sm;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-  max-width: 80%;
-  .message_bubble_content {
-    .message_bubble_sender_username {
-      font-size: 18px;
-      margin-bottom: 7px;
-    }
+  &.message_bubble_rtl {
+    margin-bottom: 5px;
+    justify-content: right;
     .message_bubble_caption {
-      position: relative;
-      font-family: "Poppins";
-      padding: 5px 9px;
-      background-color: rgb(theme.$surface-color);
-      font-size: 16px;
+      background-color: rgb(theme.$primary-color) !important;
+      border-radius: theme.$rounded-sm !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
 
-      border-radius: theme.$rounded-sm;
-      border-top-left-radius: 0 !important;
+  .message_bubble {
+    max-width: 60%;
+
+    .message_bubble_user_avatar {
+      border-radius: 12px;
+      .message_bubble_content .message_bubble_caption {
+        background-color: rgb(theme.$primary-color);
+      }
     }
 
-    // begin - defined message types
-    .message_type_image{
-      border-top-right-radius: 0;
-      top: -7px;
+    .message_bubble_content {
+      &.message_bubble_image {
+        img {
+          width: 100%;
+        }
+        &,
+        img {
+          border-radius: theme.$rounded-sm;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        &.message_bubble_no_caption {
+          &,
+          img {
+            border-radius: theme.$rounded-sm;
+          }
+        }
+
+        .message_bubble_caption {
+          top: -7px;
+          border-top-right-radius: 0;
+        }
+      }
+
+      .message_bubble_sender_username {
+        font-size: 18px;
+        margin-bottom: 7px;
+      }
+      .message_bubble_caption {
+        position: relative;
+        padding: 5px 9px;
+        background-color: rgb(theme.$surface-color);
+        font-size: 16px;
+
+        border-radius: theme.$rounded-sm;
+        border-top-left-radius: 0;
+      }
     }
-    // end
   }
 }
