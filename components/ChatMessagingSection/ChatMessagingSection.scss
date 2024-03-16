@@ -26,13 +26,6 @@
   height: 100%;
   width: 100%;
 
-  // Toggle Show/Hide
-  display: none;
-  &.chat_messaging_section_show {
-    display: block;
-  }
-  // End Toggle Show/Hide
-
   .chat_messaging_section_container {
     display: flex !important;
     flex-direction: column;

@@ -34,6 +34,7 @@ export default {
 
     <div class="mt-8">
       <v-text-field rounded="lg" prepend-inner-icon="mdi-magnify" placeholder="Search" variant="solo"></v-text-field>
+
       <h2>Messages</h2>
       <ChatRows />
     </div>

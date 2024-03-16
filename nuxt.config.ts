@@ -9,7 +9,7 @@ const myCustomDarkTheme: ThemeDefinition = {
     primary: primaryColor,
     secondary: "#050505",
     background: "#050505",
-    surface: "#0E0E0E",
+    surface: "#252525",
   }
 };
 

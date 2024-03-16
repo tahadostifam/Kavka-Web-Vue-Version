@@ -64,7 +64,7 @@ export default {
 <template>
     <div :class="($props.isRTL == true ? 'message_bubble_rtl' : '') + ' message_bubble_row'">
         <div class="message_bubble d-flex">
-            <v-avatar v-if="$props.isRTL == false" class="mr-3 message_bubble_user_avatar" color="primary" size="55">
+            <v-avatar v-if="$props.isRTL == false" class="mr-3 message_bubble_user_avatar" size="55">
                 <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
             </v-avatar>
 

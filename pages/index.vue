@@ -20,6 +20,6 @@ export default {
 </script>
 
 <template>
+  <!-- <SplitLoader /> -->
   <Chat />
-  <!-- <SplitLoader v-else/> -->
 </template>

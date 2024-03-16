@@ -1,23 +1,16 @@
 import { defineStore } from 'pinia';
-
-export type CurrentChat = {
-    chatID: string,
-    chatTitle: string,
-    chatCaption: string,
-    channelType: string,
-    messages: any[];
-};
+import { IChat } from '~/models/chat.model';
 
 export default defineStore({
     id: 'currentChat',
     state: () => ({
-        _currentChat: undefined as CurrentChat | undefined
+        _currentChat: undefined as IChat | undefined
     }),
     actions: {
-        setCurrentChat(currentChat: CurrentChat) {
+        setCurrentChat(currentChat: IChat) {
             this._currentChat = currentChat;
         },
-        removeCurrentChat() {
+        clearCurrentChat() {
             this._currentChat = undefined;
         }
     },
@@ -25,7 +18,7 @@ export default defineStore({
         isSelected(): boolean {
             return this._currentChat != undefined;
         },
-        currentChat(): CurrentChat | undefined {
+        currentChat(): IChat | undefined {
             return this._currentChat;
         }
     }

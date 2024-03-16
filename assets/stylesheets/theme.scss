@@ -1,19 +1,19 @@
 @font-face {
-    font-family: "Poppins";
-    src: url("./fonts/Poppins/Poppins-Light.ttf");
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
 }
 
 @font-face {
-    font-family: "Poppins-Thin";
-    src: url("./fonts/Poppins/Poppins-Thin.ttf");
+  font-family: "Poppins-Thin";
+  src: url("./fonts/Poppins/Poppins-Thin.ttf");
 }
 
 @font-face {
-    font-family: "Vazirmatn";
-    src: url("./fonts/Vazirmatn/Vazirmatn.ttf");
+  font-family: "Vazirmatn";
+  src: url("./fonts/Vazirmatn/Vazirmatn.ttf");
 }
 
-$body-font-family: 'Poppins', 'Vazirmatn';
+$body-font-family: "Poppins", "Vazirmatn";
 
 $background-color: var(--v-theme-secondary);
 $secondary-color: var(--v-theme-secondary);
@@ -23,7 +23,7 @@ $primary-surface-color: var(--v-theme-on-primary);
 $theme-on-bg-color: var(--v-theme-on-background);
 $border-color-light: #a4a59c28;
 
-$bk-desktop-1: 1250px;
+$bk-desktop-1: 1400px;
 $bk-desktop-2: 1050px;
 $bk-desktop-3: 600px;
 
@@ -32,29 +32,37 @@ $rounded-sm: 10px;
 $rounded-lg: 14px;
 
 .rounded-sm {
-    border-radius: $rounded-sm !important;
+  border-radius: $rounded-sm !important;
 }
 
 .rounded-lg {
-    border-radius: $rounded-lg !important;
+  border-radius: $rounded-lg !important;
 }
 // end -> border-radius
 
-.v-application, html, body {
-    font-family: $body-font-family, sans-serif !important;
+.v-application,
+html,
+body {
+  font-family: $body-font-family, sans-serif !important;
 }
 
 html {
-    overflow-y: unset;
-    user-select: none;
-    -webkit-user-drag: none;
+  overflow-y: unset;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 body,
 .v-application {
-    overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+// disable natural scroll
+::-webkit-scrollbar {
+  display: none;
 }
 
 
 @import url(./custom_menu.scss);
 @import url(./custom_switch.scss);
+@import url(./custom_transitions.scss);

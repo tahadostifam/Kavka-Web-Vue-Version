@@ -2,8 +2,7 @@
 
 .chat_sidebar {
     position: relative;
-
-    padding: 8px 15px;
+    max-height: 100vh;
 
     border-right: 1px solid theme.$border-color-light;
 

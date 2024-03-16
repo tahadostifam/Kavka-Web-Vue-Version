@@ -18,6 +18,12 @@
   .message_bubble {
     max-width: 60%;
 
+    @media screen and (max-width: theme.$bk-desktop-2) {
+      &{
+        max-width: 80%;
+      }
+    }
+
     .message_bubble_user_avatar {
       border-radius: 12px;
       .message_bubble_content .message_bubble_caption {

@@ -14,42 +14,19 @@
         padding: 2px 12px;
         border-radius: 50px;
         font-weight: 500;
-        background-color: rgb(theme.$secondary-color, 0.4);
+        background-color: rgba(theme.$surface-color);
         color: rgb(theme.$primary-surface-color);
     }
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-
-        background-position: top right;
-        background-size: 510px auto !important;
-        background-repeat: repeat;
-
-        background: url("~/assets/img/chat-bg-pattern-light.png");
-
-        opacity: 0.7;
-    }
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url("~/assets/img/chat-bg-br.png");
+    @media screen and (max-width: theme.$bk-desktop-2) {
+        &{
+            display: none;
+        }
     }
 }
 
 .v-theme--myCustomDarkTheme {
     .no_chat_selected {
-        background-color: theme.$background-color;
+        background-color: rgb(theme.$secondary-color);
     }
 }
