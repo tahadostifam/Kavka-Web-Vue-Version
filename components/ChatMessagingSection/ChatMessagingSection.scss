@@ -4,6 +4,13 @@
   background-color: theme.$background-color;
   border-bottom: 1px solid theme.$border-color-light;
   padding: 8px 0px;
+
+  .chat-header-title{
+    font-size: 18px;
+  }
+  .chat-header-subtitle{
+    font-size: 12px;
+  }
 }
 
 .chat_messaging_section {
@@ -40,6 +47,9 @@
     &,
     .bubbles {
       height: 100%;
+      &:first-child{
+        margin-top: 7px;
+      }
     }
 
     .bubbles {
@@ -51,7 +61,8 @@
   }
 
   .chat_input {
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 13px;
 
     flex: 0 0 auto;
     max-width: 100%;

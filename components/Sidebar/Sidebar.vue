@@ -15,7 +15,8 @@ export default {
       <div class="chat_sidebar-user_avatar">
         <div class="d-flex flex-row justify-space-between">
           <div class="d-flex">
-            <v-avatar class="mr-3 rounded-sm" color="primary" size="70">
+            <v-avatar class="mr-3 chat_sidebar-customized_avatar" size="70">
+              <span></span>
               <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
             </v-avatar>
             <div>
@@ -32,7 +33,7 @@ export default {
     </div>
 
     <div class="mt-8">
-      <v-text-field prepend-inner-icon="mdi-magnify" placeholder="Search" variant="solo"></v-text-field>
+      <v-text-field rounded="lg" prepend-inner-icon="mdi-magnify" placeholder="Search" variant="solo"></v-text-field>
       <h2>Messages</h2>
       <ChatRows />
     </div>

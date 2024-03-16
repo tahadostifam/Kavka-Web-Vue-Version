@@ -31,23 +31,20 @@ export default {
 </script>
 
 <template>
-  <!-- v-if="currentChatStore"
-  :class="isSelected ? 'chat_messaging_section_show' : undefined" -->
-  <div
-    class="chat_messaging_section chat_messaging_section_show"
-  >
+  <div v-if="currentChatStore"
+  :class="isSelected ? 'chat_messaging_section_show' : undefined" class="chat_messaging_section chat_messaging_section_show">
     <div
       height="var(--chat-header-height)"
       class="chat_header d-flex align-center justify rounded-0 px-4"
     >
       <div class="d-flex justify-space-between" style="width: 100%">
         <div class="d-flex align-center">
-          <v-avatar class="mr-3" color="primary" size="large">
+          <v-avatar class="mr-3 rounded-lg" color="primary" size="large">
             <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
           </v-avatar>
           <div>
-            <h1 class="text-subtitle-1 font-weight-bold">Software Devs.js</h1>
-            <span class="text-caption">21 Members</span>
+            <h1 class="chat-header-title">Software Devs.js</h1>
+            <span class="chat-header-subtitle">21 Members</span>
           </div>
         </div>
 
@@ -95,7 +92,8 @@ export default {
     <div class="chat_messaging_section_container">
       <SimpleBar class="bubbles_container">
         <div class="bubbles">
-          <MessageBubble v-for="item in 10" />
+          <MessageBubble :caption="'Hello World'" :isRTL="false" />
+          <MessageBubble :specialContentUrl="'http://localhost:3000/wallpaper1.jpg'" :caption="'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available. '" :isRTL="false" />
         </div>
       </SimpleBar>
 

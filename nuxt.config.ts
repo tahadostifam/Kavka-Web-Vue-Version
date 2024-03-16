@@ -1,15 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { ThemeDefinition } from "vuetify";
 
-const primaryColor = "#690ab7";
-
-const myCustomLightTheme: ThemeDefinition = {
-  dark: false,
-  colors: {
-    primary: primaryColor,
-    secondary: "#707579"
-  }
-};
+const primaryColor = "#1759F3";
 
 const myCustomDarkTheme: ThemeDefinition = {
   dark: true,
@@ -17,6 +9,7 @@ const myCustomDarkTheme: ThemeDefinition = {
     primary: primaryColor,
     secondary: "#050505",
     background: "#050505",
+    surface: "#0E0E0E",
   }
 };
 
@@ -45,7 +38,7 @@ export default defineNuxtConfig({
     vuetifyOptions: {
       theme: {
         defaultTheme: 'myCustomDarkTheme',
-        themes: { myCustomLightTheme, myCustomDarkTheme }
+        themes: { myCustomDarkTheme }
       },
       defaults: {
         VTextField: {

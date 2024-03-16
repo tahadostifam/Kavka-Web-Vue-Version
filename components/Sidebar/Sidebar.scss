@@ -16,6 +16,29 @@
             font-size: 15px;
         }
     }
+
+    .chat_sidebar-customized_avatar{
+        background-color: rgb(theme.$theme-on-bg-color, 0.05);
+        box-shadow: 0px 0px 10px rgb(theme.$theme-on-bg-color, 0.07);
+        padding: 4px;
+
+        overflow: unset !important;
+
+        span {
+            background-color: rgb(theme.$primary-color);
+            box-shadow: 0px 0px 4px rgb(theme.$primary-color);
+            width: 1.5px;
+            height: 23px;
+            display: block;
+            position: absolute;
+            left: 2px;
+            border-radius: 20px;
+        }
+
+        &, img{
+            border-radius: 13px;
+        }
+    }
 }
 
 .v-theme--myCustomDarkTheme {
