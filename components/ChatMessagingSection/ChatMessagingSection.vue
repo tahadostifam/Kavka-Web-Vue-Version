@@ -10,15 +10,22 @@ export default {
   },
   data() {
     return {
+      textInput: "",
       isChatOptionsOpen: false,
+      messagesLoaded: false,
       // Current Chat
       currentChatStore: useCurrentChatStore(),
     };
   },
+  mounted() {
+    setTimeout(() => {
+      this.$data.messagesLoaded = true;
+    }, 1500);
+  },
   methods: {
     openEmojiBox() {
       alert("Not implement yet");
-    },
+    }
   },
 };
 </script>
@@ -29,7 +36,8 @@ export default {
       <div class="d-flex justify-space-between" style="width: 100%">
         <div class="d-flex align-center">
 
-          <v-btn v-on:click="currentChatStore.clearCurrentChat()" class="rounded-circle mr-2" variant="text" icon="mdi-arrow-left"></v-btn>
+          <v-btn v-on:click="currentChatStore.clearCurrentChat()" class="rounded-circle mr-2 back_of_chat_button" variant="text"
+            icon="mdi-arrow-left"></v-btn>
 
           <v-avatar class="mr-3 rounded-lg" size="large">
             <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
@@ -70,7 +78,10 @@ export default {
     </div>
 
     <div class="chat_messaging_section_container">
+
       <SimpleBar class="bubbles_container">
+        <SplitLoader v-if="!messagesLoaded" style="position: absolute;"/>
+
         <div class="bubbles">
           <MessageBubble :caption="'Hello World'" :isRTL="false" />
           <MessageBubble :specialContentUrl="'http://localhost:3000/wallpaper1.jpg'"
@@ -84,12 +95,19 @@ export default {
       </SimpleBar>
 
       <div class="chat_input">
-        <v-text-field density="compact" variant="solo" color="primary" label="Message"
-          prepend-inner-icon="mdi-emoticon-outline" append-inner-icon="mdi-paperclip" single-line hide-details
-          @click:prepend-inner="openEmojiBox" @click:append-inner="openEmojiBox">
-        </v-text-field>
+        <div class="chat_input_input_box pa-1">
+          <div class="d-flex">
+            <v-btn :disabled="!messagesLoaded" :ripple="false" variant="plain" class="rounded-sm" icon="mdi-emoticon-outline"></v-btn>
+          </div>
 
-        <v-btn flat color="primary" class="rounded-circle mr-4" icon="mdi-microphone"></v-btn>
+          <input :disabled="!messagesLoaded" v-model="textInput" v-on:input="textInputChange" type="text"
+            placeholder="Write something..."/>
+
+          <div class="d-flex">
+            <v-btn :disabled="!messagesLoaded" :ripple="false" variant="plain" class="rounded-sm" icon="mdi-paperclip"></v-btn>
+            <v-btn :disabled="!messagesLoaded" color="primary" class="rounded-sm" icon="mdi-microphone"></v-btn>
+          </div>
+        </div>
       </div>
     </div>
   </div>

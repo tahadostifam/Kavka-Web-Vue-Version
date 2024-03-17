@@ -5,10 +5,10 @@
   border-bottom: 1px solid theme.$border-color-light;
   padding: 8px 0px;
 
-  .chat-header-title{
+  .chat-header-title {
     font-size: 18px;
   }
-  .chat-header-subtitle{
+  .chat-header-subtitle {
     font-size: 12px;
   }
 }
@@ -26,6 +26,16 @@
   height: 100%;
   width: 100%;
 
+  .back_of_chat_button {
+    display: block;
+  }
+
+  @media screen and (min-width: theme.$bk-desktop-2) {
+    .back_of_chat_button {
+      display: none;
+    }
+  }
+
   .chat_messaging_section_container {
     display: flex !important;
     flex-direction: column;
@@ -40,7 +50,7 @@
     &,
     .bubbles {
       height: 100%;
-      &:first-child{
+      &:first-child {
         margin-top: 7px;
       }
     }
@@ -65,15 +75,33 @@
     transform: translate(-50%);
     width: var(--chat-bubbles-width);
 
-    display: grid;
-    grid-template-columns: calc(100% - 75px) auto;
-    justify-content: space-between;
+    .chat_input_input_box {
+      width: 100%;
+      min-height: 47px;
+      background-color: rgb(theme.$surface-color);
+      border-radius: theme.$rounded-lg;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      input {
+        height: 100%;
+        margin: 0 8px;
+        width: 100%;
+        &,
+        &:focus,
+        &:hover {
+          outline: none;
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: theme.$bk-desktop-1) {
   .chat_messaging_section {
-    --chat-bubbles-width: 600px;
+    --chat-bubbles-width: 80%;
   }
 }
 
