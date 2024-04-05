@@ -1,6 +1,6 @@
 <script>
 import useCurrentChatStore from "~/stores/current_chat";
-import "./Chat.scss";
+import "./MainSection.scss";
 
 export default {
   data() {

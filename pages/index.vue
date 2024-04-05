@@ -21,5 +21,5 @@ export default {
 
 <template>
   <!-- <SplitLoader /> -->
-  <Chat />
+  <MainSection />
 </template>
