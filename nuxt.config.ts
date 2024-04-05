@@ -14,9 +14,6 @@ const myCustomDarkTheme: ThemeDefinition = {
 };
 
 export default defineNuxtConfig({
-  appConfig: {
-
-  },
   devtools: {
     enabled: true,
 
@@ -30,7 +27,6 @@ export default defineNuxtConfig({
   ],
   pinia: {
     autoImports: [
-      // automatically imports `defineStore`
       'defineStore',
     ],
   },

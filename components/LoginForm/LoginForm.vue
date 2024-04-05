@@ -26,7 +26,7 @@ export default {
 
 <template>
   <div class="login_form">
-    <img src="~/assets/img/logo.png" class="logo mb-5" />
+    <img src="~/assets/img/logo_dark_transparent.png" class="logo mb-5" />
     <h1>Sign in to Kavka</h1>
     <p class="text-medium-emphasis mb-8">Please enter your phone number.</p>
     <div>
