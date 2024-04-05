@@ -9,6 +9,13 @@ dist
 # Node dependencies
 node_modules
 
+# Yarn lock
+yarn.lock
+
+# IDE configs
+.vscode
+.idea
+
 # Logs
 logs
 *.log
