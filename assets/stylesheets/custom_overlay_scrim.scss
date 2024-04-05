@@ -1,0 +1,7 @@
+@use "@/assets/stylesheets/theme.scss" as theme;
+
+.v-overlay__scrim{
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    background-color: rgb(theme.$secondary-color, 0.3) !important;
+}

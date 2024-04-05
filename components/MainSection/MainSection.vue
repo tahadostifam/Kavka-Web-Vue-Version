@@ -6,6 +6,7 @@ export default {
   data() {
     return {
       currentChatStore: useCurrentChatStore(),
+      isSettingsDialogActive: false,
     }
   },
   mounted() {
@@ -24,6 +25,7 @@ export default {
 </script>
 
 <template>
+  <SettingsDialog/>
   <div class="chat_grid">
     <Sidebar />
 

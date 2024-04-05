@@ -1,9 +1,11 @@
 <script>
 import "./AppMenu.scss";
+import uiState from '@/stores/ui_state';
 
 export default {
   data() {
     return {
+      uiState,
       isOpen: false,
     };
   }
@@ -12,7 +14,7 @@ export default {
 
 <template>
   <v-menu
-    :close-on-content-click="false"
+    :close-on-content-click="true"
     class="custom_menu custom_menu-blurred app_menu"
     transition="scale-transition"
     location="top end"
@@ -35,7 +37,7 @@ export default {
         >
       </v-list-item>
 
-      <v-list-item>
+      <v-list-item @click="uiState.isSettingsDialogActive = true">
         <v-list-item-title><v-icon icon="mdi-cog-outline"> </v-icon> Settings</v-list-item-title>
       </v-list-item>
 
