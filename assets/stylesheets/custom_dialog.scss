@@ -1,0 +1,19 @@
+@use "@/assets/stylesheets/theme.scss" as theme;
+
+.custom_dialog {
+    .v-card {
+        background: #0e0e0e54;
+        background: linear-gradient(180deg, #000000 0%, #0e0e0e54 100%);
+        border: 1px solid theme.$border-color-light;
+        border-radius: theme.$rounded-sm !important;
+    }
+
+    .v-list {
+        .v-list-item {
+            border-radius: theme.$rounded-sm !important;
+        }
+
+        overflow: unset !important;
+        background-color: transparent !important;
+    }
+}

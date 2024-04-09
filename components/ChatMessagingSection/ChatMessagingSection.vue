@@ -35,7 +35,6 @@ export default {
     <div height="var(--chat-header-height)" class="chat_header d-flex align-center justify rounded-0 px-2">
       <div class="d-flex justify-space-between" style="width: 100%">
         <div class="d-flex align-center">
-
           <v-btn v-on:click="currentChatStore.clearCurrentChat()" class="rounded-circle mr-2 back_of_chat_button" variant="text"
             icon="mdi-arrow-left"></v-btn>
 
