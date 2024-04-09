@@ -4,8 +4,10 @@ import uiState from "@/stores/ui_state"
 
 // Import dialogs
 import DefaultDialog from "./Dialogs/DefaultDialog.vue"
+import MyAccount from "./Dialogs/MyAccount.vue"
 
 export default {
+    components: { DefaultDialog, MyAccount },
     data() {
         return {
             navList: [
@@ -40,13 +42,13 @@ export default {
                     component: null,
                 },
             ],
+            currentWindow: "my_account",
             uiState,
-            dialogMainView: DefaultDialog
         }
     },
     methods: {
-        loadDialog(item) {
-            
+        handleChangeWindow(windowName) {
+            this.$data.currentWindow = windowName;
         }
     }
 }
@@ -55,10 +57,14 @@ export default {
 <template>
     <v-dialog class="custom_dialog" v-model="uiState.isSettingsDialogActive" max-width="560"
         transition="dialog-bottom-transition">
-       
-        <div>
-            {{ dialogMainView }}
-        </div>
 
+        <v-window v-model="currentWindow">
+            <v-window-item value="default">
+                <DefaultDialog :navList="navList" :handleChangeWindow="this.handleChangeWindow" />
+            </v-window-item>
+            <v-window-item value="my_account">
+                <MyAccount :navList="navList" :handleChangeWindow="this.handleChangeWindow"/>
+            </v-window-item>
+        </v-window>
     </v-dialog>
 </template>

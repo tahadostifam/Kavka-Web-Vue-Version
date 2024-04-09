@@ -1,14 +1,12 @@
 <script>
 export default {
-    props: ["navList"]
+    props: ["navList", "handleChangeWindow"]
 }
 </script>
 <template>
     <v-card>
         <v-card-title class="d-flex justify-space-between align-center pa-3 ">
-            <div class="text-h5 text-medium-emphasis ps-3">
-                Settings
-            </div>
+            <div class="text-h5 ps-3">Settings</div>
 
             <v-btn @click="uiState.isSettingsDialogActive = false" icon="mdi-close" variant="text"></v-btn>
         </v-card-title>
@@ -19,10 +17,10 @@ export default {
                     <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
                 </v-avatar>
 
-                <div class="d-flex flex-column">
-                    <h2>Software Devs.js</h2>
-                    <span>+98 936 839 2346</span>
-                    <span class="text-grey">21 Members</span>
+                <div class="d-flex flex-column pl-3">
+                    <h2 class="mb-1">[ Taha. Dostifam ]</h2>
+                    <span class="mb-2">+98 936 839 2346</span>
+                    <span class="text-grey">@dra50n</span>
                 </div>
             </div>
         </v-card-text>
@@ -31,7 +29,7 @@ export default {
 
         <div style="overflow: auto;">
             <v-list class="mt-3 px-3">
-                <v-list-item @click="loadDialog(item, item.to)" v-for="item in navList">
+                <v-list-item @click="handleChangeWindow(item.to)" v-for="item in navList">
                     <v-list-item-title><v-icon :icon="item.icon"></v-icon> {{ item.title }}</v-list-item-title>
                 </v-list-item>
             </v-list>

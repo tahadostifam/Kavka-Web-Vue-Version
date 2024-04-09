@@ -6,6 +6,10 @@
         background: linear-gradient(180deg, #000000 0%, #0e0e0e54 100%);
         border: 1px solid theme.$border-color-light;
         border-radius: theme.$rounded-sm !important;
+
+        .dialog-title {
+            font-family: theme.$body-font-family !important;
+        }
     }
 
     .v-list {
