@@ -1,129 +1,29 @@
-<script>
+<script lang="ts">
 import useCurrentChatStore from "~/stores/current_chat"
 import "./ChatRows.scss";
+import useAuthStore from '~/stores/auth';
+import { IChat } from "~/api/chat/chat.model";
 
 export default {
   data() {
     return {
-      chatsList: [
-        {
-          active: true,
-          name: "John Doe",
-          online: true,
-          lastMessage: {
-            type: "image",
-            content: "Take a look at this funny cat!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-        {
-          active: false,
-          name: "Jane Doe",
-          online: false,
-          lastMessage: {
-            type: "text",
-            content: "Hello Taha!"
-          },
-          avatar: "https://picsum.photos/300/300"
-        },
-      ],
-      currentChatStore: useCurrentChatStore()
+      authStore: useAuthStore(),
+      currentChatStore: useCurrentChatStore(),
+      chatsList: [],
     };
   },
+  mounted() {
+    this.$data.authStore.chats!.forEach((item) => {
+      (this.$data.chatsList as any[]).push({
+        active: false,
+        ...item,
+      })
+    })
+    console.log(this.$data.chatsList);
+    
+  },
   methods: {
-    handleChatSelected(chat) {
-      console.log(chat); // FIXME - after implementing the api in frontend
-
+    handleChatSelected(chat: IChat) {
       const sampleChat = {
         channelType: "channel",
         chatCaption: "",
@@ -132,7 +32,7 @@ export default {
         messages: []
       };
       this.$data.currentChatStore.setCurrentChat(sampleChat)
-    }
+    },
   }
 };
 </script>
@@ -144,11 +44,11 @@ export default {
       v-on:click="handleChatSelected(item)"
       v-for="(item, index) in chatsList"
         :key="index"
-        :name="item.name"
-        :online="item.online"
-        :lastMessage="item.lastMessage"
-        :avatar="item.avatar"
-        :active="item.active"
+        :name="(item as IChat).chatDetail.title"
+        :online="false"
+        :lastMessage="item"
+        :avatar="undefined"
+        :active="(item as any).active"
       />
     </div>
   </div>

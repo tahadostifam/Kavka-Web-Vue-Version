@@ -42,7 +42,7 @@ export default {
                     component: null,
                 },
             ],
-            currentWindow: "my_account",
+            currentWindow: "default",
             uiState,
         }
     },

@@ -1,5 +1,5 @@
 const uiState = {
-    isSettingsDialogActive: true
+    isSettingsDialogActive: false
 }
 
 export default uiState;

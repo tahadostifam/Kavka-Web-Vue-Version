@@ -1,10 +1,21 @@
 <script>
 import "./Sidebar.scss";
+import useAuthStore from '~/stores/auth';
+
 export default {
   data() {
     return {
+      authStore: useAuthStore(),
       selectedFolder: null
     };
+  },
+  mounted() {
+    console.log(this.authStore.user.name);
+  },
+  methods: {
+    getUserFullName() {
+      return this.authStore.user.name.trim() + " " + this.authStore.user.lastName.trim()
+    }
   }
 };
 </script>
@@ -20,7 +31,7 @@ export default {
               <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
             </v-avatar>
             <div>
-              <h1 class="text-high-emphasis chat_sidebar-user_avatar-username">John Doe</h1>
+              <h1 class="text-high-emphasis chat_sidebar-user_avatar-username">{{ getUserFullName() }}</h1>
               <span class="text-disabled chat_sidebar-user_avatar-state">Online</span>
             </div>
           </div>
