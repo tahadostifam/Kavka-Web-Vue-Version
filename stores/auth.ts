@@ -33,7 +33,7 @@ export default defineStore({
       });
     },
     async authenticate() {
-      return new Promise<{ user: IUser; chats: IChat[] }>(
+      return new Promise<{ user: IUser, chats: IChat[] }>(
         async (resolve, reject) => {
           const accessToken = this.getToken(
             AuthService.StorageToken.Authorization
@@ -47,7 +47,7 @@ export default defineStore({
             .then(({ user, chats }) => {
               this.user = user;
               this.chats = chats;
-
+          
               resolve({ user, chats });
             })
             .catch(reject);

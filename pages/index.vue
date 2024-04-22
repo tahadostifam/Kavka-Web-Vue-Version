@@ -1,5 +1,6 @@
 <script lang="ts">
 import useAuthStore from '~/stores/auth';
+import { IUser } from "~/api/auth/auth.model"
 
 export default {
   data() {
@@ -8,10 +9,19 @@ export default {
     };
   },
   methods: {
-    update() {
-      this.authStore.authenticate().catch(() => this.$router.push("/login")).then((authenticated) => {
-        console.log("Authenticated", authenticated);        
-      });
+    async update() {
+      let vm = this;
+      try {
+        const { user, chats } = await this.$data.authStore.authenticate();
+        
+        // Complete user profile before enter to this page
+        if ((user.name + user.lastName).trim().length == 0) {
+          this.$router.push('/complete_profile');
+        }
+      } catch (error) {
+        console.error("Authentication failed:", error);
+        this.$router.push("/login")
+      }
     }
   },
   mounted() {

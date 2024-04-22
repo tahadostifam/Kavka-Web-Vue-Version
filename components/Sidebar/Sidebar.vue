@@ -9,9 +9,6 @@ export default {
       selectedFolder: null
     };
   },
-  mounted() {
-    console.log(this.authStore.user.name);
-  },
   methods: {
     getUserFullName() {
       return this.authStore.user.name.trim() + " " + this.authStore.user.lastName.trim()

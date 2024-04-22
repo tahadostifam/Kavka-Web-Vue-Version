@@ -19,8 +19,6 @@ export default {
         ...item,
       })
     })
-    console.log(this.$data.chatsList);
-    
   },
   methods: {
     handleChatSelected(chat: IChat) {
@@ -33,6 +31,9 @@ export default {
       };
       this.$data.currentChatStore.setCurrentChat(sampleChat)
     },
+    getLastMessage(item: IChat) {
+      return item.messages[0];
+    }
   }
 };
 </script>
@@ -40,16 +41,9 @@ export default {
 <template>
   <div class="chat_rows mt-3">
     <div class="chat_rows_list">
-      <ChatRow
-      v-on:click="handleChatSelected(item)"
-      v-for="(item, index) in chatsList"
-        :key="index"
-        :name="(item as IChat).chatDetail.title"
-        :online="false"
-        :lastMessage="item"
-        :avatar="undefined"
-        :active="(item as any).active"
-      />
+      <ChatRow v-on:click="handleChatSelected(item)" v-for="(item, index) in chatsList" :key="index"
+        :name="(item as IChat).chatDetail.title" :online="false" :lastMessage="getLastMessage(item)" :avatar="undefined"
+        :active="(item as any).active" :type="(item as IChat).chatType" />
     </div>
   </div>
 </template>

@@ -1,3 +1,5 @@
+import { IMessage } from "../messages/message.model";
+
 export interface IChat {
   chatId: string;
   chatType: string;
@@ -5,8 +7,5 @@ export interface IChat {
     title: string
     username: string
   }
-  lastMessage: {
-    type: string,
-    content: any
-  }
+  messages: IMessage[]
 }
