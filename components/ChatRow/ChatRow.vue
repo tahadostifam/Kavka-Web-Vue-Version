@@ -2,28 +2,14 @@
 import "./ChatRow.scss";
 export default {
     props: ['type', 'avatar', 'name', 'online', 'lastMessage', 'active'],
-    data() {
-        return {
-            randomAvatarColors: ["primary", "brown-lighten-2", "blue-grey-darken-2", "pink-lighten-1", "purple-lighten-2", "red-darken-1", "cyan-lighten-3", "teal-lighten-3"]
-        }
-    },
-    methods: {
-        getRandomAvatarColor() {
-            return this.$data.randomAvatarColors[Math.floor(Math.random() * this.$data.randomAvatarColors.length)];
-        }
-    },
 };
 </script>
 
 <template>
     <div :class="['chat_row_item', active ? 'chat_row_item_active' : undefined]">
-        <div v-if="avatar" class="chat_row_avatar">
-            <img :src="avatar" />
-            <span class="chat_row_online"></span>
-        </div>
-        <v-avatar v-else size="55" :color="getRandomAvatarColor()" class="mr-3">
-            <span class="text-h5">{{ name[0] }}</span>
-        </v-avatar>
+        <UserAvatar :src="avatar" color="random" class="mr-3" size="55" >
+            <span v-if="!avatar" class="text-h5">{{ name[0] }}</span>
+        </UserAvatar>
 
         <div>
             <h1 class="chat_row_user_name">{{ name }}</h1>

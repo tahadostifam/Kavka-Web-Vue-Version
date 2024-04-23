@@ -44,6 +44,7 @@ export default {
       <ChatRow v-on:click="handleChatSelected(item)" v-for="(item, index) in chatsList" :key="index"
         :name="(item as IChat).chatDetail.title" :online="false" :lastMessage="getLastMessage(item)" :avatar="undefined"
         :active="(item as any).active" :type="(item as IChat).chatType" />
+    
     </div>
   </div>
 </template>

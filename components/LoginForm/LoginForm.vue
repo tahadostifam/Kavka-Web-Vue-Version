@@ -1,5 +1,5 @@
 <script lang="ts">
-import { formattedPhone, unformattedPhone } from "@/utils/phone_formatter";
+import { formatPhone, unFormatPhone } from "@/utils/phone_formatter";
 import "./LoginForm.scss";
 
 export default {
@@ -11,15 +11,15 @@ export default {
     };
   },
   methods: {
-    formattedPhone,
-    unformattedPhone,
+    formatPhone,
+    unFormatPhone,
     handlePhoneInput() {
-      this.phoneNumber = this.formattedPhone(this.phoneNumber)
+      this.phoneNumber = this.formatPhone(this.phoneNumber)
     },
   },
   mounted() {
     // FIXME - development
-    this.phoneNumber = this.formattedPhone("9368392346")
+    this.phoneNumber = this.formatPhone("9368392346")
   }
 };
 </script>
@@ -34,7 +34,7 @@ export default {
 
       <v-checkbox v-model="keepMeSignedIn" label="Keep me signed in" color="primary"></v-checkbox>
 
-      <v-btn :loading="submitLoading" @click="handleLogin(unformattedPhone(phoneNumber), keepMeSignedIn)" class="rounded-sm" size="x-large" type="submit" color="primary" flat block>Next</v-btn>
+      <v-btn :loading="submitLoading" @click="handleLogin(unFormatPhone(phoneNumber), keepMeSignedIn)" class="rounded-sm" size="x-large" type="submit" color="primary" flat block>Next</v-btn>
     </div>
   </div>
 </template>

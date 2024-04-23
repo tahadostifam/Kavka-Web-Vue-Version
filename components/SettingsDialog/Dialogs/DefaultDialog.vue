@@ -1,6 +1,14 @@
 <script>
+import useAuthStore from '~/stores/auth';
+import { normalizePhone } from '../../../utils/phone_formatter';
+
 export default {
-    props: ["navList", "handleChangeWindow"]
+    props: ["navList", "handleChangeWindow"],
+    data() {
+        return {
+            authStore: useAuthStore(),
+        }
+    }
 }
 </script>
 <template>
@@ -13,14 +21,14 @@ export default {
 
         <v-card-text class="pt-0">
             <div class="d-flex align-start">
-                <v-avatar class="mr-3 rounded-sm" size="130">
-                    <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
-                </v-avatar>
+                <UserAvatar color="primary" class="mr-3 rounded-sm" size="130">
+                    <span class="text-h5">{{ authStore.getFullName()[0] }}</span>
+                </UserAvatar>
 
                 <div class="d-flex flex-column pl-3">
-                    <h2 class="mb-1">[ Taha. Dostifam ]</h2>
-                    <span class="mb-2">+98 936 839 2346</span>
-                    <span class="text-grey">@dra50n</span>
+                    <h2 class="mb-1">{{ authStore.getFullName() }}</h2>
+                    <span class="mb-2">{{ normalizePhone(authStore.user.phone) }}</span>
+                    <span class="text-grey">@{{ authStore.user.username }}</span>
                 </div>
             </div>
         </v-card-text>

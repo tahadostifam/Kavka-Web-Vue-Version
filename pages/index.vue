@@ -10,7 +10,6 @@ export default {
   },
   methods: {
     async update() {
-      let vm = this;
       try {
         const { user, chats } = await this.$data.authStore.authenticate();
         

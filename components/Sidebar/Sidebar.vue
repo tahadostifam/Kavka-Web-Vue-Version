@@ -9,11 +9,6 @@ export default {
       selectedFolder: null
     };
   },
-  methods: {
-    getUserFullName() {
-      return this.authStore.user.name.trim() + " " + this.authStore.user.lastName.trim()
-    }
-  }
 };
 </script>
 
@@ -23,12 +18,13 @@ export default {
       <div class="chat_sidebar-user_avatar">
         <div class="d-flex flex-row justify-space-between">
           <div class="d-flex">
-            <v-avatar class="mr-3 chat_sidebar-customized_avatar" size="70">
+            <UserAvatar class="mr-3 chat_sidebar-customized_avatar" size="70"
+              src="https://cdn.vuetifyjs.com/images/john.jpg">
               <span></span>
-              <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
-            </v-avatar>
+            </UserAvatar>
+
             <div>
-              <h1 class="text-high-emphasis chat_sidebar-user_avatar-username">{{ getUserFullName() }}</h1>
+              <h1 class="text-high-emphasis chat_sidebar-user_avatar-username">{{ authStore.getFullName() }}</h1>
               <span class="text-disabled chat_sidebar-user_avatar-state">Online</span>
             </div>
           </div>
