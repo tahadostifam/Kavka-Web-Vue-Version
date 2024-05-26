@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
-import { IUser } from "~/api/auth/auth.model";
+import { IUser } from "~/models/auth.model";
 import AuthService from "~/api/auth/auth.service";
-import { IChat } from "../api/chat/chat.model";
+import { IChat } from "../models/chat.model";
 
 export default defineStore({
   id: "auth",

@@ -1,54 +1,58 @@
-<script lang="ts">
-import { normalizePhone } from "@/utils/phone_formatter";
-import useAuthStore from '~/stores/auth';
+<style lang="scss">
+.login_form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 400px;
 
+  .logo {
+    height: 190px;
+  }
+}
+</style>
+
+<script lang="ts">
 export default {
   data() {
     return {
-      authStore: useAuthStore(),
-      phoneNumber: undefined as string | undefined,
-      isCodeSent: false,
-      formMessage: undefined,
-      invalidOtp: false,
-      submitLoading: false,
-    }
+      email: "",
+      password: "",
+      keepMeSignedIn: true,
+      submitLoading: false
+    };
   },
   methods: {
-    handleSubmitVerify(otp: string) {
-      this.authStore.verifyOtp(this.phoneNumber!, Number(otp)).then(() => {
-        this.$router.push("/")
-      }).catch((error) => {
-        console.error(error);
-        this.invalidOtp = true;
-      })
-    },
-    handleBackToLoginForm() {
-      this.isCodeSent = false
-    },
-    handleLogin(phone: string, keepMeSignedIn: boolean) {
-      phone = normalizePhone(phone);
-
-      this.submitLoading = true;
-
-      this.authStore.login(phone).then(() => {
-        this.phoneNumber = phone;
-        this.isCodeSent = true
-
-        this.submitLoading = false
-      }).catch((error) => {
-        console.log(error);
-      })
+    handleSubmitLogin() {
+      alert("not implemented yet")
     }
   },
+  mounted() {
+    if (process.env.NODE_ENV == "development") {
+      this.$data.email = "johndoe@kavka.social"
+      this.$data.password = "12345678"
+    }
+  }
 };
 </script>
 
 <template>
-  <LoginForm :submit-loading="submitLoading" :form-message="formMessage" v-if="!isCodeSent" :handle-login="handleLogin"/>
-  <VerifyOTPForm
-    :handle-submit-verify="handleSubmitVerify"
-    :back-to-login-form="handleBackToLoginForm"
-    :invalid-otp="invalidOtp"
-    :phone="phoneNumber"
-    v-else/>
+  <div class="login_form">
+    <img src="~/assets/img/logo_dark_transparent.png" class="logo mb-5" />
+    <h1>Sign in to Kavka</h1>
+    <p class="text-medium-emphasis mb-8">Please enter your Email and Password.</p>
+    <div>
+      <v-text-field v-model="email" maxlength="50"
+        color="primary" label="Email" variant="outlined"></v-text-field>
+
+      <v-text-field type="password" v-model="password" minlength="8" maxlength="50"
+        color="primary" label="Password" variant="outlined"></v-text-field>
+
+      <v-checkbox v-model="keepMeSignedIn" label="Keep me signed in" color="primary"></v-checkbox>
+
+      <v-btn :loading="submitLoading" @click="handleSubmitLogin"
+        class="rounded-sm" size="x-large" type="submit" color="primary" flat block>Signin</v-btn>
+    </div>
+  </div>
 </template>

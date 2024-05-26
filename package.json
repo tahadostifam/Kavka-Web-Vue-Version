@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "kavka-web",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -12,12 +12,13 @@
     "@invictus.codes/nuxt-vuetify": "^0.3.0",
     "@nuxt/devtools": "latest",
     "@types/file-type": "^10.9.1",
-    "nuxt": "^3.7.0",
+    "nuxt": "^3.11.2",
     "sass": "^1.66.1"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
     "axios": "^1.5.0",
+    "dotenv": "^16.4.5",
     "file-type": "^19.0.0",
     "pinia": "^2.1.6",
     "simplebar-vue": "^2.3.3",

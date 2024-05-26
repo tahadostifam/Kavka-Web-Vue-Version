@@ -1,15 +1,5 @@
 <script>
 import "./Sidebar.scss";
-import useAuthStore from '~/stores/auth';
-
-export default {
-  data() {
-    return {
-      authStore: useAuthStore(),
-      selectedFolder: null
-    };
-  },
-};
 </script>
 
 <template>
@@ -24,7 +14,7 @@ export default {
             </UserAvatar>
 
             <div>
-              <h1 class="text-high-emphasis chat_sidebar-user_avatar-username">{{ authStore.getFullName() }}</h1>
+              <h1 class="text-high-emphasis chat_sidebar-user_avatar-username">John Doe</h1>
               <span class="text-disabled chat_sidebar-user_avatar-state">Online</span>
             </div>
           </div>

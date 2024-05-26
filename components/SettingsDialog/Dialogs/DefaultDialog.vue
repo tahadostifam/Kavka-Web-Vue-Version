@@ -1,14 +1,6 @@
 <script>
-import useAuthStore from '~/stores/auth';
-import { normalizePhone } from '../../../utils/phone_formatter';
-
 export default {
     props: ["navList", "handleChangeWindow"],
-    data() {
-        return {
-            authStore: useAuthStore(),
-        }
-    }
 }
 </script>
 <template>
@@ -22,13 +14,14 @@ export default {
         <v-card-text class="pt-0">
             <div class="d-flex align-start">
                 <UserAvatar color="primary" class="mr-3 rounded-sm" size="130">
-                    <span class="text-h5">{{ authStore.getFullName()[0] }}</span>
+                    <!-- <span class="text-h5">{{ authStore.getFullName()[0] }}</span> -->
+                    <span class="text-h5">John Doe</span>
                 </UserAvatar>
 
                 <div class="d-flex flex-column pl-3">
-                    <h2 class="mb-1">{{ authStore.getFullName() }}</h2>
-                    <span class="mb-2">{{ normalizePhone(authStore.user.phone) }}</span>
-                    <span class="text-grey">@{{ authStore.user.username }}</span>
+                    <h2 class="mb-1">John Doe</h2>
+                    <span class="mb-2">johndoe@kavka.social</span>
+                    <span class="text-grey">@johndoe</span>
                 </div>
             </div>
         </v-card-text>

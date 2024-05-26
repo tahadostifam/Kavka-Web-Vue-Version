@@ -1,27 +1,29 @@
 <script lang="ts">
 import useCurrentChatStore from "~/stores/current_chat"
 import "./ChatRows.scss";
-import useAuthStore from '~/stores/auth';
-import { IChat } from "~/api/chat/chat.model";
 
 export default {
   data() {
     return {
-      authStore: useAuthStore(),
       currentChatStore: useCurrentChatStore(),
-      chatsList: [],
+      chatsList: [] as any,
     };
   },
   mounted() {
-    this.$data.authStore.chats!.forEach((item) => {
-      (this.$data.chatsList as any[]).push({
-        active: false,
-        ...item,
-      })
+    this.$data.chatsList.push({
+      active: false, 
+      chatType: "channel",
+      title: "Jane Doe"
     })
+    // this.$data.authStore.chats!.forEach((item) => {
+    //   (this.$data.chatsList as any[]).push({
+    //     active: false,
+    //     ...item,
+    //   })
+    // })
   },
   methods: {
-    handleChatSelected(chat: IChat) {
+    handleChatSelected(chat: any) {
       const sampleChat = {
         channelType: "channel",
         chatCaption: "",
@@ -31,8 +33,9 @@ export default {
       };
       this.$data.currentChatStore.setCurrentChat(sampleChat)
     },
-    getLastMessage(item: IChat) {
-      return item.messages[0];
+    getLastMessage(item: any) {
+      return "Hello..."
+      // return item.messages[0];
     }
   }
 };
@@ -42,9 +45,9 @@ export default {
   <div class="chat_rows mt-3">
     <div class="chat_rows_list">
       <ChatRow v-on:click="handleChatSelected(item)" v-for="(item, index) in chatsList" :key="index"
-        :name="(item as IChat).chatDetail.title" :online="false" :lastMessage="getLastMessage(item)" :avatar="undefined"
-        :active="(item as any).active" :type="(item as IChat).chatType" />
-    
+        :name="item.title" :online="false" :lastMessage="getLastMessage(item)" :avatar="undefined"
+        :active="(item as any).active" :type="(item as any).chatType" />
+
     </div>
   </div>
 </template>
