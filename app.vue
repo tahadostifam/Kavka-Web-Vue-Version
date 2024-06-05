@@ -1,5 +1,5 @@
 <script setup>
-import "@/assets/stylesheets/theme.scss";
+import "@/assets/style/theme.scss";
 </script>
 
 <template>

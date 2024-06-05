@@ -1,5 +1,3 @@
-@use "@/assets/stylesheets/theme.scss" as theme;
-
 .chat_header {
   background-color: theme.$background-color;
   border-bottom: 1px solid theme.$border-color-light;
@@ -99,9 +97,9 @@
   }
 }
 
-@media screen and (max-width: theme.$bk-desktop-1) {
+@media screen and (max-width: 1500px) {
   .chat_messaging_section {
-    --chat-bubbles-width: 80%;
+    --chat-bubbles-width: 95%;
   }
 }
 

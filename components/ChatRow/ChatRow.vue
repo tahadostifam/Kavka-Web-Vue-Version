@@ -8,7 +8,7 @@ export default {
 <template>
     <div :class="['chat_row_item', active ? 'chat_row_item_active' : undefined]">
         <UserAvatar :src="avatar" color="random" class="mr-3" size="55" >
-            <span v-if="!avatar" class="text-h5">{{ name[0] }}</span>
+            <template v-if="!avatar">{{ name[0] }}</template>
         </UserAvatar>
 
         <div>

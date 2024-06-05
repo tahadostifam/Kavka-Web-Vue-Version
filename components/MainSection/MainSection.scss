@@ -1,46 +1,31 @@
-@use "@/assets/stylesheets/theme.scss" as theme;
+.main_grid {
+  --mini-sidebar-width: 90px;
+  --sidebar-width: 450px;
 
-.chat_grid {
-  --sidebar-width: 420px;
-
-  @media screen and (max-width: theme.$bk-desktop-1) {
-    & {
-      --sidebar-width: 350px;
-    }
-  }
-
-  @media screen and (max-width: theme.$bk-desktop-2) {
-    & {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      --sidebar-width: 100vw;
-    }
+  .main_view {
+    width: calc(100% - var(--mini-sidebar-width));
   }
 
   display: grid;
-  grid-template-columns: var(--sidebar-width) calc(100vw - var(--sidebar-width));
+  grid-template-columns: var(--mini-sidebar-width) calc(100vw - var(--mini-sidebar-width));
 
   .col {
     height: 100vh;
   }
+}
 
-  .chat_section {
-    position: relative;
-  }
+#chat_section {
+  position: relative !important;
+  width: calc(100% - var(--mini-sidebar-width));
+}
 
-  @media screen and (max-width: theme.$bk-desktop-2) {
-    .chat_section{
-        display: block;
-        position: absolute;
-        z-index: 50;
-        width: 100vw;
-        height: 100vh;
-        background: rgb(theme.$background-color);
-    }
+@media screen and (max-width: theme.$bk-desktop-2) {
+  #chat_section {
+    display: block;
+    position: absolute;
+    z-index: 50;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(theme.$background-color);
   }
 }

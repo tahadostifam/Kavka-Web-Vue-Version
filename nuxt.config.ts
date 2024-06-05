@@ -14,13 +14,22 @@ const myCustomDarkTheme: ThemeDefinition = {
 };
 
 export default defineNuxtConfig({
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@use "@/assets/style/theme.scss" as *;'
+        }
+      }
+    }
+  },
   app: {
     head: {
       charset: "utf-8",
       viewport: 'width=device-width, initial-scale=1',
       title: "Kavka",
       meta: [
-        {name: "description", content: "Secure and Private Chat Application."},
+        { name: "description", content: "Secure and Private Chat Application." },
       ],
     }
   },

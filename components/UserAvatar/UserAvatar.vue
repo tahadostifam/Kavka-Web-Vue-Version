@@ -16,7 +16,7 @@ export default {
 
 <template>
     <v-avatar :color="color == 'random' ? getRandomAvatarColor() : color" :class="class" :size="size">
-        <slot />
+        <slot v-if="!src"/>
         <v-img v-if="src" :src="src"></v-img>
     </v-avatar>
 </template>

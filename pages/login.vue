@@ -39,20 +39,19 @@ export default {
 
 <template>
   <div class="login_form">
-    <img src="~/assets/img/logo_dark_transparent.png" class="logo mb-5" />
+    <img src="~/assets/img/logo.png" class="logo mb-5" />
     <h1>Sign in to Kavka</h1>
     <p class="text-medium-emphasis mb-8">Please enter your Email and Password.</p>
     <div>
-      <v-text-field v-model="email" maxlength="50"
-        color="primary" label="Email" variant="outlined"></v-text-field>
+      <v-text-field v-model="email" maxlength="50" color="primary" label="Email" variant="outlined"></v-text-field>
 
-      <v-text-field type="password" v-model="password" minlength="8" maxlength="50"
-        color="primary" label="Password" variant="outlined"></v-text-field>
+      <v-text-field type="password" v-model="password" minlength="8" maxlength="50" color="primary" label="Password"
+        variant="outlined"></v-text-field>
 
       <v-checkbox v-model="keepMeSignedIn" label="Keep me signed in" color="primary"></v-checkbox>
 
-      <v-btn :loading="submitLoading" @click="handleSubmitLogin"
-        class="rounded-sm" size="x-large" type="submit" color="primary" flat block>Signin</v-btn>
+      <v-btn :loading="submitLoading" @click="handleSubmitLogin" class="rounded-sm" size="x-large" type="submit"
+        color="primary" flat block>Signin</v-btn>
     </div>
   </div>
 </template>

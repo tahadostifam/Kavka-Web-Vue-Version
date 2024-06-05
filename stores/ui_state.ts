@@ -1,5 +1,6 @@
 const uiState = {
-    isSettingsDialogActive: false
+    isSettingsDialogActive: false,
+    activeTab: "chat"
 }
 
 export default uiState;

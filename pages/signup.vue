@@ -53,7 +53,7 @@ export default {
 
 <template>
   <div class="signup_form">
-    <img src="~/assets/img/logo_dark_transparent.png" class="logo mb-5" />
+    <img src="~/assets/img/logo.png" class="logo mb-5" />
     <h1>Sign up to Kavka</h1>
     <p class="text-medium-emphasis mb-8">Welcome to Kavka!</p>
     <div>
