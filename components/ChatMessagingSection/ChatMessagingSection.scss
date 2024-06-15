@@ -1,5 +1,4 @@
 .chat_header {
-  background-color: $background-color;
   border-bottom: 1px solid $border-color-light;
   padding: 8px 0px;
 
@@ -23,6 +22,7 @@
   bottom: 0;
   height: 100%;
   width: 100%;
+  background-color: rgba($background-color, 1);
 
   .back_of_chat_button {
     display: block;

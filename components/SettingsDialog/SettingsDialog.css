@@ -1,0 +1,11 @@
+.settings_dialog_my_account_user_avatar .v-avatar {
+  overflow: unset !important;
+}
+.settings_dialog_my_account_user_avatar .v-avatar img {
+  border-radius: 50%;
+}
+.settings_dialog_my_account_user_avatar .change_avatar_button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}/*# sourceMappingURL=SettingsDialog.css.map */

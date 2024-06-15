@@ -1,0 +1,10 @@
+.app_menu .v-list .v-list-item {
+  min-width: 240px !important;
+}
+.app_menu .app_menu_version {
+  padding: 9px 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 13px !important;
+}/*# sourceMappingURL=AppMenu.css.map */

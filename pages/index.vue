@@ -27,8 +27,10 @@ export default {
 
 <template>
   <SettingsDialog />
+
   <div class="main_grid">
     <MiniSidebar />
+    <MobileNav />
 
     <div class="main_view">
       <div id="chat" v-if="uiState.activeTab == 'chat'">
@@ -38,12 +40,21 @@ export default {
           <div id="chat_section" class="col" v-if="$data.currentChatStore.isSelected">
             <ChatMessagingSection />
           </div>
+
           <NoChatSelected v-else />
         </Transition>
       </div>
 
       <div id="rooms" v-if="uiState.activeTab == 'rooms'">
-        <h1 class="text-red">Not implemented yet</h1>
+        <h1 class="text-red">Rooms :: Not implemented yet</h1>
+      </div>
+
+      <div id="pages" v-if="uiState.activeTab == 'pages'">
+        <h1 class="text-red">Pages :: Not implemented yet</h1>
+      </div>
+
+      <div id="settings" v-if="uiState.activeTab == 'settings'">
+        <h1 class="text-red">Settings :: Not implemented yet</h1>
       </div>
     </div>
   </div>
@@ -52,11 +63,18 @@ export default {
 </template>
 
 <style lang="scss">
+#chat_section {
+  position: relative !important;
+  width: calc(100% - var(--mini-sidebar-width));
+}
+
 .main_grid {
   --mini-sidebar-width: 90px;
   --sidebar-width: 450px;
 
   .main_view {
+    position: relative;
+    left: 0;
     width: calc(100% - var(--mini-sidebar-width));
   }
 
@@ -66,21 +84,30 @@ export default {
   .col {
     height: 100vh;
   }
-}
 
-#chat_section {
-  position: relative !important;
-  width: calc(100% - var(--mini-sidebar-width));
-}
+  @media screen and (max-width: $bk-desktop-2) {
+    // Enable mobile mode!
 
-@media screen and (max-width: $bk-desktop-2) {
-  #chat_section {
-    display: block;
-    position: absolute;
-    z-index: 50;
-    width: 100vw;
-    height: 100vh;
-    background: rgb($background-color);
+    &{
+      grid-template-columns: 100%;
+    }
+
+    .main_view {
+      width: 100%;
+    }
+
+    #chat_section {
+      background: $background-color;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: 50;
+    }
   }
 }
+
 </style>

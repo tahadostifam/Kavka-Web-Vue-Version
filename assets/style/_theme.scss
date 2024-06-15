@@ -24,7 +24,7 @@ $theme-on-bg-color: var(--v-theme-on-background);
 $border-color-light: #a4a59c28;
 
 $bk-desktop-1: 1400px;
-$bk-desktop-2: 1350px;
+$bk-desktop-2: 1150px;
 $bk-desktop-3: 600px;
 
 // begin -> border-radius
@@ -38,6 +38,7 @@ $rounded-lg: 14px;
 .rounded-lg {
   border-radius: $rounded-lg !important;
 }
+
 // end -> border-radius
 
 .v-application,
@@ -62,9 +63,8 @@ body,
   display: none;
 }
 
-
-@import url(./custom_menu.scss);
-@import url(./custom_switch.scss);
-@import url(./custom_transitions.scss);
-@import url(./custom_overlay_scrim.scss);
-@import url(./custom_dialog.scss);
+@import "./custom/custom_menu.scss";
+@import "./custom/custom_switch.scss";
+@import "./custom/custom_transitions.scss";
+@import "./custom/custom_overlay_scrim.scss";
+@import "./custom/custom_dialog.scss";

@@ -23,8 +23,17 @@
         }
     }
 
+    .mini_sidebar-flex {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        align-items: center;
+    }
+
     @media screen and (max-width: $bk-desktop-2) {
-        & {
+        // Enable mobile mode!
+        
+        &{  
             display: none !important;
         }
     }
