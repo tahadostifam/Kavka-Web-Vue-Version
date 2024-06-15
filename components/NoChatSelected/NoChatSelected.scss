@@ -12,11 +12,11 @@
         padding: 2px 12px;
         border-radius: 50px;
         font-weight: 500;
-        background-color: rgba(theme.$surface-color);
-        color: rgb(theme.$primary-surface-color);
+        background-color: rgba($surface-color);
+        color: rgb($primary-surface-color);
     }
 
-    @media screen and (max-width: theme.$bk-desktop-2) {
+    @media screen and (max-width: $bk-desktop-2) {
         &{
             display: none;
         }
@@ -25,6 +25,6 @@
 
 .v-theme--myCustomDarkTheme {
     .no_chat_selected {
-        background-color: rgb(theme.$secondary-color);
+        background-color: rgb($secondary-color);
     }
 }

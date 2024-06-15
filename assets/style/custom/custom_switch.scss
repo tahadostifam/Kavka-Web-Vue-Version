@@ -24,7 +24,7 @@
     .v-selection-control--dirty {
         .v-switch__thumb{
             background-color: #fff !important;
-            border: 2px solid rgb(theme.$primary-color) !important;
+            border: 2px solid rgb($primary-color) !important;
         }
     }
 }

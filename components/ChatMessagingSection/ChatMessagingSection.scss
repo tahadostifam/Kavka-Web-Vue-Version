@@ -1,6 +1,6 @@
 .chat_header {
-  background-color: theme.$background-color;
-  border-bottom: 1px solid theme.$border-color-light;
+  background-color: $background-color;
+  border-bottom: 1px solid $border-color-light;
   padding: 8px 0px;
 
   .chat-header-title {
@@ -28,7 +28,7 @@
     display: block;
   }
 
-  @media screen and (min-width: theme.$bk-desktop-2) {
+  @media screen and (min-width: $bk-desktop-2) {
     .back_of_chat_button {
       display: none;
     }
@@ -76,8 +76,8 @@
     .chat_input_input_box {
       width: 100%;
       min-height: 47px;
-      background-color: rgb(theme.$surface-color);
-      border-radius: theme.$rounded-lg;
+      background-color: rgb($surface-color);
+      border-radius: $rounded-lg;
 
       display: flex;
       flex-direction: row;
@@ -103,7 +103,7 @@
   }
 }
 
-@media screen and (max-width: theme.$bk-desktop-2) {
+@media screen and (max-width: $bk-desktop-2) {
   .chat_messaging_section {
     --chat-bubbles-width: 95%;
   }

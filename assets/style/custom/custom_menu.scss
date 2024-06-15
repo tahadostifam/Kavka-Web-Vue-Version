@@ -5,7 +5,7 @@
       background-color: rgb(var(--v-theme-background), 0.8) !important;
 
       &.v-theme--myCustomDarkTheme {
-        background-color: rgb(theme.$secondary-color, 0.3) !important;
+        background-color: rgb($secondary-color, 0.3) !important;
       }
     }
   }
@@ -14,7 +14,7 @@
     background-color: rgb(var(--v-theme-background)) !important;
 
     &.v-theme--myCustomDarkTheme {
-      background-color: rgb(theme.$secondary-color) !important;
+      background-color: rgb($secondary-color) !important;
     }
 
     box-shadow: 0px 0px 10px #00000026 !important;
@@ -27,14 +27,14 @@
 
     &,
     .v-list-item {
-      border-radius: theme.$rounded-sm !important;
+      border-radius: $rounded-sm !important;
     }
 
     .v-list-item {
       cursor: pointer;
 
       .v-list-item-title {
-        color: rgb(theme.$theme-on-bg-color) !important;
+        color: rgb($theme-on-bg-color) !important;
         font-size: 14px;
         font-weight: 500 !important;
       }
@@ -48,12 +48,12 @@
       min-height: 34px;
 
       &:hover {
-        background-color: rgb(theme.$secondary-color, 0.1);
+        background-color: rgb($secondary-color, 0.1);
       }
     }
 
     &.v-theme--myCustomDarkTheme .v-list-item:hover {
-      background-color: rgb(theme.$theme-on-bg-color, 0.1) !important;
+      background-color: rgb($theme-on-bg-color, 0.1) !important;
     }
   }
 }

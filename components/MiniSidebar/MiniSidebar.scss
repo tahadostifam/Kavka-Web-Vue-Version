@@ -1,6 +1,6 @@
 .mini_sidebar {
     height: 100vh;
-    border-right: 1px solid theme.$border-color-light;
+    border-right: 1px solid $border-color-light;
 
     &-logo {
         width: 30px;
@@ -11,7 +11,7 @@
 
         &.active {
             cursor: default;
-            color: rgb(theme.$primary-color) !important;
+            color: rgb($primary-color) !important;
             opacity: 1;
         }
 
@@ -23,7 +23,7 @@
         }
     }
 
-    @media screen and (max-width: theme.$bk-desktop-2) {
+    @media screen and (max-width: $bk-desktop-2) {
         & {
             display: none !important;
         }

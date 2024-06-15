@@ -1,6 +1,6 @@
 .v-theme--myCustomDarkTheme {
     .chat_sidebar {
-        background-color: theme.$background-color !important;
+        background-color: $background-color !important;
     }
 }
 
@@ -9,7 +9,7 @@
     max-height: 100vh;
     width: var(--sidebar-width);
 
-    border-right: 1px solid theme.$border-color-light;
+    border-right: 1px solid $border-color-light;
 
     .chat_sidebar-user_avatar {
         width: 100%;
@@ -24,15 +24,15 @@
     }
 
     .chat_sidebar-customized_avatar {
-        background-color: rgb(theme.$theme-on-bg-color, 0.05);
-        box-shadow: 0px 0px 10px rgb(theme.$theme-on-bg-color, 0.07);
+        background-color: rgb($theme-on-bg-color, 0.05);
+        box-shadow: 0px 0px 10px rgb($theme-on-bg-color, 0.07);
         padding: 4px;
 
         overflow: unset !important;
 
         span {
-            background-color: rgb(theme.$primary-color);
-            box-shadow: 0px 0px 4px rgb(theme.$primary-color);
+            background-color: rgb($primary-color);
+            box-shadow: 0px 0px 4px rgb($primary-color);
             width: 1.5px;
             height: 23px;
             display: block;
@@ -54,7 +54,7 @@
     grid-template-columns: var(--sidebar-width) calc(100vw - var(--sidebar-width));
 }
 
-@media screen and (max-width: theme.$bk-desktop-2) {
+@media screen and (max-width: $bk-desktop-2) {
     #chat {
         position: absolute;
         width: 100%;
@@ -69,7 +69,7 @@
     }
 }
 
-@media screen and (max-width: theme.$bk-desktop-1) {
+@media screen and (max-width: $bk-desktop-1) {
     #chat {
         --sidebar-width: 380px;
     }

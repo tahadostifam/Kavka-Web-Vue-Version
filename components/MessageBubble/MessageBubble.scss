@@ -7,8 +7,8 @@
     margin-bottom: 5px;
     justify-content: right;
     .message_bubble_caption {
-      background-color: rgb(theme.$primary-color) !important;
-      border-radius: theme.$rounded-sm !important;
+      background-color: rgb($primary-color) !important;
+      border-radius: $rounded-sm !important;
       border-bottom-right-radius: 0 !important;
     }
   }
@@ -16,7 +16,7 @@
   .message_bubble {
     max-width: 60%;
 
-    @media screen and (max-width: theme.$bk-desktop-2) {
+    @media screen and (max-width: $bk-desktop-2) {
       &{
         max-width: 80%;
       }
@@ -25,7 +25,7 @@
     .message_bubble_user_avatar {
       border-radius: 12px;
       .message_bubble_content .message_bubble_caption {
-        background-color: rgb(theme.$primary-color);
+        background-color: rgb($primary-color);
       }
     }
 
@@ -36,7 +36,7 @@
         }
         &,
         img {
-          border-radius: theme.$rounded-sm;
+          border-radius: $rounded-sm;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
         }
@@ -44,7 +44,7 @@
         &.message_bubble_no_caption {
           &,
           img {
-            border-radius: theme.$rounded-sm;
+            border-radius: $rounded-sm;
           }
         }
 
@@ -61,10 +61,10 @@
       .message_bubble_caption {
         position: relative;
         padding: 5px 9px;
-        background-color: rgb(theme.$surface-color);
+        background-color: rgb($surface-color);
         font-size: 16px;
 
-        border-radius: theme.$rounded-sm;
+        border-radius: $rounded-sm;
         border-top-left-radius: 0;
       }
     }

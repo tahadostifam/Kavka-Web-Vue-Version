@@ -1,5 +1,5 @@
 .v-overlay__scrim{
     opacity: 1;
     backdrop-filter: blur(4px);
-    background-color: rgb(theme.$secondary-color, 0.7) !important;
+    background-color: rgb($secondary-color, 0.7) !important;
 }

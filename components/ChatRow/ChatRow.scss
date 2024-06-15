@@ -5,22 +5,22 @@
     &.chat_row_item_active:hover {
         cursor: default;
 
-        background-color: rgb(theme.$primary-color, 1);
+        background-color: rgb($primary-color, 1);
         .chat_row_user_name {
-            color: rgb(theme.$primary-surface-color, 1) !important;
+            color: rgb($primary-surface-color, 1) !important;
         }
         .chat_row_user_last_message {
             opacity: 1;
-            color: rgb(theme.$primary-surface-color, 1) !important;
+            color: rgb($primary-surface-color, 1) !important;
         }
     }
     &:hover {
-        background-color: rgb(theme.$secondary-color, 0.1);
+        background-color: rgb($secondary-color, 0.1);
     }
 
     margin-bottom: 5px;
     padding: 8px;
-    border-radius: theme.$rounded-sm;
+    border-radius: $rounded-sm;
 
     display: flex;
     align-items: center;
