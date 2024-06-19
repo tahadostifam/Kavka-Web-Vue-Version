@@ -46,6 +46,20 @@
             border-radius: 13px;
         }
     }
+
+    .chat_sidebar-mobile {
+        display: none;
+    }
+
+    @media screen and (max-width: $bk-desktop-2) {
+        .chat_sidebar-desktop {
+            display: none;
+        }
+
+        .chat_sidebar-mobile {
+            display: block;
+        }
+    }
 }
 
 #chat {
